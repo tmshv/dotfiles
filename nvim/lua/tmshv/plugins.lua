@@ -16,6 +16,10 @@ return function(use)
         as = "rose-pine",
     })
 
+    -- SNIPPETS
+    use "L3MON4D3/LuaSnip"             --snippet engine
+    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
     -- AUTOCOMPLETE (nvim-cmp based)
     -- TODO: make it opt as posible
     use "hrsh7th/nvim-cmp"             -- completion plugin
@@ -23,9 +27,5 @@ return function(use)
     use "hrsh7th/cmp-path"             -- path completions source
     use "hrsh7th/cmp-cmdline"          -- cmdline completions source
     use "saadparwaiz1/cmp_luasnip"     -- snippet completions source
-
-    -- SNIPPETS
-    use "L3MON4D3/LuaSnip"             --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 end
 
