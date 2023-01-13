@@ -74,6 +74,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["darkplus.nvim"] = {
+    loaded = true,
+    path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+    url = "https://github.com/lunarvim/darkplus.nvim"
+  },
+  neovim = {
+    loaded = true,
+    path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/packer.nvim",
