@@ -1,19 +1,21 @@
 grep_after: 6
-background_opacity: 1
+live_config_reload: true
+hide_cursor_when_typing: true
 window:
+  opacity: 1
   dimensions:
     columns: 150
     lines: 50
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
   dynamic_padding: true
   decorations: buttonless
 scrolling:
   history: 10000
   multiplier: 15
 key_bindings:
-  - key: W
+  - key: Return
     mods: Command
     action: ToggleFullscreen
   - key: N
@@ -107,36 +109,25 @@ key_bindings:
     mods: Command
     chars: "\x029"
 font:
-  size: 13
+  size: 12
   normal:
-    family: Menlo
+    family: JetBrainsMono Nerd Font Mono
     style: Regular
   bold:
-    family: Menlo
+    family: JetBrainsMono Nerd Font Mono
     style: Bold
   italic:
-    family: Menlo
+    family: JetBrainsMono Nerd Font Mono
     style: Italic
 custom_cursor_colors: true
 colors:
-  # COLORSCHEME: /Users/bbarrows/.config/alacritty/colors/afterglow.yaml
-  # Default colors
   primary:
-    # hard contrast: background = '#f9f5d7'
-    background: '#1A2025'
-    foreground: '#e3dfc5'
-
-    dim_foreground: '#dbdbdb'
-    bright_foreground: '#d9d9d9'
-    dim_background: '#202020'    # not sure
-    bright_background: '#3a3a3a' # not sure
-
-  # Cursor colors
+    background: '#2e3440'
+    foreground: '#d8dee9'
+    dim_foreground: '#a5abb6'
   cursor:
-    text: '#2c2c2c'
-    cursor: '#d9d9d9'
-
-  # Normal colors
+    text: '#2e3440'
+    cursor: '#d8dee9'
   vi_mode_cursor:
     text: '#2e3440'
     cursor: '#d8dee9'
@@ -146,42 +137,37 @@ colors:
   search:
     matches:
       foreground: CellBackground
-      background: '#abd3de'
+      background: '#88c0d0'
     bar:
       background: '#434c5e'
       foreground: '#d8dee9'
   normal:
-  # Bright colors
-    black: '#1c1c1c'
-    red: '#bc5653'
-    green: '#b4c28a'
-    yellow: '#ebc17a'
-    blue: '#7eaac7'
-    magenta: '#aa6292'
-    cyan: '#d3dde8'
-    white: '#cacaca'
-
-  # Bright colors
+    black: '#3b4252'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#88c0d0'
+    white: '#e5e9f0'
   bright:
-    black: '#636363'
-    red: '#bc5653'
-    green: '#b4c28a'
-    yellow: '#ebc17a'
-    blue: '#7eaac7'
-    magenta: '#aa6292'
-    cyan: '#d3dde8'
-    white: '#f7f7f7'
-
-  # Dim colors
+    black: '#4c566a'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#8fbcbb'
+    white: '#eceff4'
   dim:
-    black: '#232323'
-    red: '#74423f'
-    green: '#9ea880'
-    yellow: '#8b7653'
-    blue: '#556b79'
-    magenta: '#6e4962'
-    cyan: '#5c8482'
-    white: '#828282'
+    black: '#373e4d'
+    red: '#94545d'
+    green: '#809575'
+    yellow: '#b29e75'
+    blue: '#68809a'
+    magenta: '#8c738c'
+    cyan: '#6d96a5'
+    white: '#aeb3bb'
   indexed_colors:
     - {index: 16, color: '#232323'}
     - {index: 17, color: '#d65d0e'}
@@ -189,9 +175,4 @@ colors:
     - {index: 19, color: '#d5c4a1'}
     - {index: 20, color: '#665c54'}
     - {index: 21, color: '#3c3836'}
-hide_cursor_when_typing: true
-shell:
-  program: /bin/zsh
-  args:
-    - -l
 
