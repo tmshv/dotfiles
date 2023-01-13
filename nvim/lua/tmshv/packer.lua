@@ -52,17 +52,9 @@ packer.init {
 }
 
 -- Install your plugins here
-return function(extra_plugins)
+return function(plugins)
   return packer.startup(function(use)
-    -- core plugins
-    -- this is a part of neovim actually
-    -- but need to be installed separately anyway
-    use "wbthomason/packer.nvim" -- have packer manage itself
-    use "nvim-lua/popup.nvim" -- an implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- useful lua functions used ny lots of plugins
-
-    -- extra plugins
-    extra_plugins(use)
+    plugins(use)
 
     -- automatically set up your configuration after cloning packer.nvim
     -- keep this at the end after all plugins
