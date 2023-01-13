@@ -64,5 +64,12 @@ return function(use)
             {'rafamadriz/friendly-snippets'},
         }
     })
+
+    -- TELESCOPE
+    use ({
+        "nvim-telescope/telescope.nvim",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    })
+    -- use 'nvim-telescope/telescope-media-files.nvim'
 end
 
