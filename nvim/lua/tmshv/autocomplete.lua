@@ -62,6 +62,14 @@ cmp.setup {
     end,
   },
 
+  -- sources to nvim-cmp are here
+  -- order of the list make sense
+  sources = {
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  },
+
   -- setup nvim-cmp keymaps
   mapping = {
     -- show completion window on Ctrl+Space
@@ -137,12 +145,7 @@ cmp.setup {
       return vim_item
     end,
   },
-  -- sources to use with order
-  sources = {
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
-  },
+
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
