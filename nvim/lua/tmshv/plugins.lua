@@ -27,5 +27,42 @@ return function(use)
     use "hrsh7th/cmp-path"             -- path completions source
     use "hrsh7th/cmp-cmdline"          -- cmdline completions source
     use "saadparwaiz1/cmp_luasnip"     -- snippet completions source
+    use "hrsh7th/cmp-nvim-lua"         -- lua completions source
+    use ({                             -- package.json copmletions source
+        "David-Kunz/cmp-npm",
+        requires = { "nvim-lua/plenary.nvim" }
+    })
+
+    -- LSP
+    use "neovim/nvim-lspconfig"              -- enable LSP
+    use "williamboman/mason.nvim"            -- UI for LSP servers
+    use "williamboman/mason-lspconfig.nvim"
+    use ({
+        "hrsh7th/cmp-nvim-lsp",              -- LSP completions source
+        requires = {
+            { "hrsh7th/nvim-cmp" },
+        }
+    })
+    use ({
+        "VonHeikemen/lsp-zero.nvim",         -- LSP autoconfig
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    })
 end
 
