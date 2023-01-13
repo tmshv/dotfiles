@@ -1,0 +1,131 @@
+" nice video about how to setup this file.
+" author is pretty crazy
+" https://www.youtube.com/watch?v=n9k9scbTuvQ
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" How to install:
+" 1. add a plugin line below
+" 2. save file
+" 3. call :source% to reload vimrc
+" 4. call :PlugInstall
+
+" Plug 'wincent/command-t'
+Plug 'morhetz/gruvbox'
+Plug 'Shougo/deoplete.nvim'
+Plug 'preservim/nerdtree'
+Plug 'dense-analysis/ale'
+Plug 'jremmen/vim-ripgrep'
+Plug 'fatih/vim-go'
+Plug 'vim-airline/vim-airline'
+Plug 'tweekmonster/gofmt.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
+" Plug 'git@github.com:Valloric/YouCompleteMe.git'
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf' ", { 'do': { -> fzf#install() } }
+" Plug 'vimwiki/vimwiki'
+
+" Initialize plugin system
+call plug#end()
+
+" ================ General Config ====================
+"
+"
+set number                      "Line numbers are good
+set relativenumber              "Better to show relative numbers
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+"set showcmd                     "Show incomplete cmds down the bottom
+"set showmode                    "Show current mode down the bottom
+"set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+
+set ruler
+set mouse=a
+set clipboard=unnamed
+
+set tabstop=4           "The width of a TAB is set to 4.
+                        "Still it is a \t. It is just that
+										" Vim will interpret it to be having
+										" a width of 4.
+set nu
+set nowrap
+set smartcase
+set ignorecase
+set incsearch
+set mps+=<:>
+
+
+" Turn Off Swap Files
+
+set noswapfile
+set nobackup
+set nowb
+
+
+" Indentation
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=4        "Indents will have a width of 4
+set softtabstop=4       "Sets the number of columns for a TAB
+set expandtab			"replace tabs with spaces
+set tabstop=4
+
+" Auto indent pasted text
+" nnoremap p p=`]<C-o>
+" nnoremap P P=`]<C-o>
+
+
+syntax on
+colorscheme gruvbox
+set background=dark
+
+let mapleader = " "
+
+" Copy the relative path of the current file to the clipboard
+nmap <Leader>cf :silent !echo -n % \| pbcopy<Enter>
+
+" let g:CommandTWildIgnore=&wildignore . ",*/bin,**/bower_components/*,**/node_modules/*"
+
+" SETUP NERDTREE
+
+" use ctrl+n to toggle nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+
+" SETUP CTRLP
+
+let g:ctrlp_use_cache = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" SETUP FZF
+
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <silent> <Leader>rg :Rg<CR>
+
+" SETUP ALE
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+
+"" Enable completion where available.
+" This setting must be set before ALE is loaded.
+"
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+let g:ale_completion_enabled = 1
+
+" when working with TypeScript files, ALE supports automatic imports from external modules. This behavior is disabled by default and can be enabled by setting:
+let g:ale_completion_tsserver_autoimport = 1
