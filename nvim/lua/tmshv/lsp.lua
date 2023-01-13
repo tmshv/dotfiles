@@ -9,6 +9,10 @@ require("mason-lspconfig").setup()
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
+
+-- configure lua language server for neovim
+lsp.nvim_workspace()
+
 lsp.setup()
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
