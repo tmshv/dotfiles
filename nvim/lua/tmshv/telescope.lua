@@ -1,6 +1,7 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-  return
+    vim.notify("Telescope not found. Check your config")
+    return
 end
 
 -- telescope.load_extension('media_files')
