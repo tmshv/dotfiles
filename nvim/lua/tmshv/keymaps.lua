@@ -19,6 +19,8 @@ vim.g.maplocalleader = " "
 
 -- NORMAL --
 
+keymap("n", "<ESC>", "<cmd> noh <CR>", opts) -- no highlight on Escape
+
 -- navigate between tiles (windows) with Ctrl+hkjl
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
