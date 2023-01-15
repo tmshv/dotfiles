@@ -19,13 +19,12 @@ telescope.setup {
         ["<C-n>"] = actions.cycle_history_next,
         ["<C-p>"] = actions.cycle_history_prev,
 
-        -- ["<C-j>"] = actions.move_selection_next,
-        -- ["<C-k>"] = actions.move_selection_previous,
-
-        ["<C-c>"] = actions.close,
-
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
+
+        ["<C-c>"] = actions.close,
 
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
@@ -35,8 +34,8 @@ telescope.setup {
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+        -- ["<PageUp>"] = actions.results_scrolling_up,
+        -- ["<PageDown>"] = actions.results_scrolling_down,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -72,8 +71,8 @@ telescope.setup {
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+        -- ["<PageUp>"] = actions.results_scrolling_up,
+        -- ["<PageDown>"] = actions.results_scrolling_down,
 
         ["?"] = actions.which_key,
       },
@@ -111,6 +110,8 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>th", builtin.colorscheme, {})
 vim.keymap.set("n", "<leader>tk", builtin.keymaps, {})
+vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, {}) -- TODO: to gd
+vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {}) -- TODO: to gd
 vim.keymap.set("n", "<C-g>", builtin.git_files, {})
 vim.keymap.set("n", "<C-p>", builtin.commands, {})
 
