@@ -71,9 +71,18 @@ configs.setup({
     autopairs = {
         enable = true,
     },
-    context_commentstring = {
+    context_commentstring = { -- enable context for smart JSX comments
         enable = true,
-        enable_autocmd = false,
+        enable_autocmd = false, -- disable the CursorHold autocommand (for Comment.nvim)
+        -- config = {
+        --     javascript = {
+        --         __default = '// %s',
+        --         jsx_element = '{/* %s */}',
+        --         jsx_fragment = '{/* %s */}',
+        --         jsx_attribute = '// %s',
+        --         comment = '// %s'
+        --     }
+        -- }
     },
     rainbow = {
         enable = true,
