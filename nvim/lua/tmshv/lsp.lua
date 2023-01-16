@@ -20,6 +20,7 @@ lsp.preset("recommended")
 
 lsp.skip_server_setup({
     "denols",
+    "remark_ls",
     -- "eslint",
     -- "angularls",
 })
