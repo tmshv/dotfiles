@@ -14,4 +14,5 @@ require("tmshv.treesitter")
 require("tmshv.autopairs")
 require("tmshv.indent")
 require("tmshv.git")
+require("tmshv.tabs")
 
