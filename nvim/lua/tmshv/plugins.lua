@@ -71,5 +71,11 @@ return function(use)
         requires = { {"nvim-lua/plenary.nvim"} }
     })
     -- use 'nvim-telescope/telescope-media-files.nvim'
+
+    -- TREESITTER
+    use ({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+    })
 end
 
