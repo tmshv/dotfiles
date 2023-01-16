@@ -6,21 +6,28 @@ end
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    -- ensure_installed = {
-    -- "sumneko_lua",
-    -- "pyright",
-    -- "rust_analyzer",
-    -- "tsserver",
-    -- },
+    ensure_installed = {
+    "sumneko_lua",
+    "pyright",
+    "rust_analyzer",
+    "tsserver",
+    },
 })
 
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+local lsp = require("lsp-zero")
+-- TODO: see how it can be replaced with more customized setup
+lsp.preset("recommended")
+
+lsp.skip_server_setup({
+    "denols", --[[ 'eslint', ]]
+    --[[ 'angularls', ]]
+})
 
 -- how to configure a language server
-lsp.configure('tsserver', {
+lsp.configure("tsserver", {
   on_attach = function(client, bufnr)
     -- print('hello tsserver')
+    -- TODO: disable resolved_capabilies.document_formatting = fasle
   end,
   -- settings = {
   --   completions = {
