@@ -8,6 +8,7 @@ require("tmshv.colors")
 require("tmshv.lsp")
 require("tmshv.autocomplete")
 require("tmshv.telescope")
+require("tmshv.tree")
 require("tmshv.treesitter")
 require("tmshv.autopairs")
 
