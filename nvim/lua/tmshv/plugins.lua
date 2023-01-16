@@ -96,5 +96,21 @@ return function(use)
 
     -- GIT
     use "lewis6991/gitsigns.nvim"
+
+    -- TABS
+    use ({
+        "akinsho/bufferline.nvim",
+        tag = "v3.*",
+        requires = "nvim-tree/nvim-web-devicons",
+    })
+
+    --STATUS
+    use {
+        "nvim-lualine/lualine.nvim",
+        requires = {
+            "kyazdani42/nvim-web-devicons",
+            opt = true,
+        },
+    }
 end
 
