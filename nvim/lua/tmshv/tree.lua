@@ -10,15 +10,11 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
--- OR setup with some options
 tree.setup({
 --  sort_by = "case_sensitive",
---  renderer = {
---    group_empty = true,
---  },
---  filters = {
---    dotfiles = true,
---  },
+    filters = {
+        dotfiles = true,
+    },
     disable_netrw = true,
     hijack_netrw = true,
     open_on_setup = false,
@@ -54,17 +50,14 @@ tree.setup({
         timeout = 50,
     },
     view = {
-        --[[ width = 30, ]]
-        --[[ height = 30, ]]
         hide_root_folder = false,
         side = "left",
-        --[[ auto_resize = true, ]]
         mappings = {
             custom_only = false,
             list = {
-            { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-            { key = "h", cb = tree_cb "close_node" },
-            { key = "v", cb = tree_cb "vsplit" },
+                { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+                { key = "h", cb = tree_cb "close_node" },
+                --[[ { key = "v", cb = tree_cb "vsplit" }, ]]
             },
         },
         number = false,
