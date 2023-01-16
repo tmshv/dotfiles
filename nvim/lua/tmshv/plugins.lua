@@ -9,6 +9,9 @@ return function(use)
     use "nvim-lua/popup.nvim" -- an implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- useful lua functions used ny lots of plugins
 
+    -- COMMON
+    use "windwp/nvim-autopairs" -- autopair (), [], {} etc.
+
     -- COLORS
     use ({ "lunarvim/darkplus.nvim" })
     use ({
