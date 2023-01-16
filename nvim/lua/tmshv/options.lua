@@ -6,7 +6,8 @@ vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 250                        -- faster completion (4000ms default)
-vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300                        -- time to wait for a mapped sequence to complete (in milliseconds)
 
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 -- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
