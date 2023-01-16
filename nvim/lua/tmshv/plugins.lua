@@ -11,6 +11,7 @@ return function(use)
 
     -- COMMON
     use "windwp/nvim-autopairs" -- autopair (), [], {} etc.
+    use "numToStr/Comment.nvim" -- code commenting
 
     -- COLORS
     use ({ "lunarvim/darkplus.nvim" })
@@ -81,5 +82,6 @@ return function(use)
         run = ":TSUpdate"
     })
     use "p00f/nvim-ts-rainbow"
+    use "JoosepAlviste/nvim-ts-context-commentstring" -- for smart JSX commenting 
 end
 
