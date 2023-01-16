@@ -93,5 +93,8 @@ return function(use)
     })
     use "p00f/nvim-ts-rainbow"
     use "JoosepAlviste/nvim-ts-context-commentstring" -- for smart JSX commenting 
+
+    -- GIT
+    use "lewis6991/gitsigns.nvim"
 end
 
