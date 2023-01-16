@@ -50,6 +50,10 @@ keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 -- new buffer
 keymap("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
+-- LSP keymaps
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+
 -- copy all
 -- ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
 
