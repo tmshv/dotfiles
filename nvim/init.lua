@@ -6,6 +6,7 @@ plugins(require("tmshv.plugins"))
 
 require("tmshv.colors")
 require("tmshv.lsp")
+require("tmshv.null")
 require("tmshv.autocomplete")
 require("tmshv.telescope")
 require("tmshv.tree")
