@@ -40,6 +40,14 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- save
+keymap("n", "<C-s>", "<cmd> w <CR>", opts) -- save file
+
+-- toggle relative number
+keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
+
+-- new buffer
+keymap("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
 -- INSERT --
 
