@@ -50,10 +50,17 @@ keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 -- new buffer
 keymap("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
+-- copy all
+-- ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
+
 -- INSERT --
 
 -- fast jk to exit insert mode
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
+
+-- go to beginning and end
+-- keymap("i", "<C-b>", "<ESC>^i", opts) -- beginning of line
+-- keymap("i", "<C-e>", "<End>^i", opts) -- end of line
 
 
 -- Visual --
@@ -84,3 +91,4 @@ keymap("v", "p", '"_dP', opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
