@@ -13,6 +13,7 @@ return function(use)
     use "windwp/nvim-autopairs" -- autopair (), [], {} etc.
     use "numToStr/Comment.nvim" -- code commenting
     use "lukas-reineke/indent-blankline.nvim"
+    use "folke/which-key.nvim"
 
     -- COLORS
     use ({ "lunarvim/darkplus.nvim" })

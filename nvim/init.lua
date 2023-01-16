@@ -17,4 +17,5 @@ require("tmshv.indent")
 require("tmshv.git")
 require("tmshv.tabs")
 require("tmshv.status")
+require("tmshv.whichkey")
 
