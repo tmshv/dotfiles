@@ -1,6 +1,6 @@
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
-  return
+    return
 end
 
 configs.setup({
@@ -90,4 +90,3 @@ configs.setup({
         max_file_lines = nil,
     },
 })
-
