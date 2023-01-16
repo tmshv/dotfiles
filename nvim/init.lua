@@ -12,4 +12,5 @@ require("tmshv.tree")
 require("tmshv.comment")
 require("tmshv.treesitter")
 require("tmshv.autopairs")
+require("tmshv.indent")
 

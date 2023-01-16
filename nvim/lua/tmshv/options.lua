@@ -41,6 +41,7 @@ vim.opt.shortmess:append "c"                    -- c don't give |ins-completion-
                                                 -- "-- XXX completion (YYY)", "match 1 of 2", "The only match",
                                                 -- "Pattern not found", "Back at original", etc.
 
+
 -- TODO: dont know what this lines do
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd [[set iskeyword+=-]]
