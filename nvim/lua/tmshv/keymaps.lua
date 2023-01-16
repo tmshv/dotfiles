@@ -27,9 +27,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- toggle file tree on leader+e
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
 -- resize with arrows
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 -- keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -39,6 +36,10 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 -- navigate buffers with Shift+lh
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- toggle file tree on leader+e
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+-- keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- can be used as fallback
 
 -- save
 keymap("n", "<C-s>", "<cmd> w <CR>", opts) -- save file
