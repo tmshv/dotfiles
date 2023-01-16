@@ -5,7 +5,7 @@ end
 
 -- show EOL character
 vim.opt.list = true
-vim.opt.listchars:append "eol:↴"
+-- vim.opt.listchars:append "eol:↴"
 
 indent.setup {
     -- for example, context is off by default, use this to turn it on
