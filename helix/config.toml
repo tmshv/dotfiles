@@ -7,12 +7,19 @@ scrolloff = 5
 cursorline = true
 cursorcolumn = false
 bufferline = "always"
+true-color = true
+color-modes = true  
 # auto-pairs = true # defaults to `true`
+
+idle-timeout = 0
+auto-format = true
+auto-completion = true
+completion-trigger-len = 2
  
 [editor.cursor-shape]
-insert = "bar"
+insert = "underline" # bar
 normal = "block"
-select = "underline"
+select = "block"
 
 [editor.file-picker]
 hidden = true
@@ -38,3 +45,9 @@ separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true #	Display LSP progress messages below statusline1
+auto-signature-help = true #	Enable automatic popup of signature help (parameter hints)	true
+display-signature-help-docs = true #
+ 
