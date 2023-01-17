@@ -92,11 +92,11 @@ return {
 	},
 
   -- timeout_milliseconds defaults to 1000 and can be omitted
-    key = '`',
-  leader = {
-    mods = 'SUPER',
-    timeout_milliseconds = 1000
-  },
+  -- leader = {
+  --   key = '`',
+  --   mods = 'SUPER',
+  --   timeout_milliseconds = 1000
+  -- },
 
 	keys = {
 		{ key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
