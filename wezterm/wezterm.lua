@@ -27,7 +27,8 @@ return {
 
 	-- color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 	-- color_scheme = "astromouse (terminal.sexy)",
-	color_scheme = "Sakura",
+	-- color_scheme = "Sakura",
+	color_scheme = "rose-pine"
 	colors = {
 		tab_bar = {
 			-- The color of the inactive tab bar edge/divider
