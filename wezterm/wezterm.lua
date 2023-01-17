@@ -25,7 +25,9 @@ return {
 	use_fancy_tab_bar = false,
 	tab_max_width = 26,
 
-	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+	-- color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+	-- color_scheme = "astromouse (terminal.sexy)",
+	color_scheme = "Sakura",
 	colors = {
 		tab_bar = {
 			-- The color of the inactive tab bar edge/divider
@@ -89,14 +91,24 @@ return {
 		bottom = 0,
 	},
 
+  -- timeout_milliseconds defaults to 1000 and can be omitted
+    key = '`',
+  leader = {
+    mods = 'SUPER',
+    timeout_milliseconds = 1000
+  },
+
 	keys = {
 		{ key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
 		{ key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
 		{ key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
 		{ key = '!', mods = 'CTRL', action = act.ActivateTab(0) },
 		{ key = '!', mods = 'SHIFT|CTRL', action = act.ActivateTab(0) },
+		{ key = 'Enter', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
 		{ key = '"', mods = 'ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
-		{ key = '"', mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+		-- { key = '"', mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+		-- { key = "'", mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { key = 'h', mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
 		{ key = '#', mods = 'CTRL', action = act.ActivateTab(2) },
 		{ key = '#', mods = 'SHIFT|CTRL', action = act.ActivateTab(2) },
 		{ key = '$', mods = 'CTRL', action = act.ActivateTab(3) },
@@ -104,10 +116,10 @@ return {
 		{ key = '%', mods = 'CTRL', action = act.ActivateTab(4) },
 		{ key = '%', mods = 'SHIFT|CTRL', action = act.ActivateTab(4) },
 		{ key = '%', mods = 'ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-		{ key = '%', mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+		{ key = '5', mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+		-- { key = '%', mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
 		{ key = '&', mods = 'CTRL', action = act.ActivateTab(6) },
 		{ key = '&', mods = 'SHIFT|CTRL', action = act.ActivateTab(6) },
-		{ key = "'", mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
 		{ key = '(', mods = 'CTRL', action = act.ActivateTab(-1) },
 		{ key = '(', mods = 'SHIFT|CTRL', action = act.ActivateTab(-1) },
 		{ key = ')', mods = 'CTRL', action = act.ResetFontSize },
@@ -131,7 +143,6 @@ return {
 		{ key = '4', mods = 'SHIFT|CTRL', action = act.ActivateTab(3) },
 		{ key = '4', mods = 'SUPER', action = act.ActivateTab(3) },
 		{ key = '5', mods = 'SHIFT|CTRL', action = act.ActivateTab(4) },
-		{ key = '5', mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
 		{ key = '5', mods = 'SUPER', action = act.ActivateTab(4) },
 		{ key = '6', mods = 'SHIFT|CTRL', action = act.ActivateTab(5) },
 		{ key = '6', mods = 'SUPER', action = act.ActivateTab(5) },
