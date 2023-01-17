@@ -12,7 +12,15 @@ local function scheme_for_appearance(appearance)
 	if appearance:find "Dark" then
 		return "Catppuccin Mocha"
 	else
-		return "Catppuccin Frappe"
+		-- color_scheme = "astromouse (terminal.sexy)",
+		-- color_scheme = "Sakura",
+		-- color_scheme = "rose-pine",
+		-- return "Royal"
+		-- return "Sakura"
+		-- retrun "SeaShells"
+		-- return "Sequoia Monochrome"
+		-- return "Sex Colors (terminal.sexy)"
+		return "Dark Violet (base16)"
 	end
 end
 
@@ -25,10 +33,7 @@ return {
 	use_fancy_tab_bar = false,
 	tab_max_width = 26,
 
-	-- color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-	-- color_scheme = "astromouse (terminal.sexy)",
-	-- color_scheme = "Sakura",
-	color_scheme = "rose-pine"
+	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 	colors = {
 		tab_bar = {
 			-- The color of the inactive tab bar edge/divider
