@@ -469,17 +469,30 @@ indent = { tab-width = 2, unit = "  " }
 name = "html"
 source = { git = "https://github.com/tree-sitter/tree-sitter-html", rev = "29f53d8f4f2335e61bf6418ab8958dac3282077a" }
 
+# [[language]]
+# name = "python"
+# scope = "source.python"
+# injection-regex = "python"
+# file-types = ["py"]
+# shebangs = ["python"]
+# roots = []
+# comment-token = "#"
+# language-server = { command = "pylsp" }
+# # TODO: pyls needs utf-8 offsets
+# indent = { tab-width = 4, unit = "    " }
+
 [[language]]
 name = "python"
-scope = "source.python"
-injection-regex = "python"
+roots = ["pyproject.toml"]
 file-types = ["py"]
-shebangs = ["python"]
-roots = []
-comment-token = "#"
-language-server = { command = "pylsp" }
-# TODO: pyls needs utf-8 offsets
-indent = { tab-width = 4, unit = "    " }
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+config = {} # <- this is the important line
+
+# [[language]]
+# name = "python"
+# scope = "source.python"
+# language-server = { command = "ruff-lsp" }
+# config = { settings = { args = [] } }
 
 [[grammar]]
 name = "python"
