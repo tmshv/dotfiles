@@ -12,6 +12,9 @@ comment-token = "//"
 language-server = { command = "rust-analyzer" }
 indent = { tab-width = 4, unit = "    " }
 
+[language.config]
+checkOnSave = { command = "clippy" }
+
 [language.auto-pairs]
 '(' = ')'
 '{' = '}'
