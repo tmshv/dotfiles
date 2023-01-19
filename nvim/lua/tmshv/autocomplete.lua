@@ -68,6 +68,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = 'npm', keyword_length = 4 }, -- TODO: be sure it is works
   },
 
   -- setup nvim-cmp keymaps
