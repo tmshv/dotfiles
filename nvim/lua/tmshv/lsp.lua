@@ -46,5 +46,4 @@ lsp.setup()
 -- learn to configure LSP servers: :help lsp-zero-api-showcase
 
 -- Reserve space for diagnostic icons (LSP):
-vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
-
+vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
