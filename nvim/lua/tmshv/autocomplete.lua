@@ -50,6 +50,7 @@ local completion_source = {
     luasnip = "[Snippet]",
     buffer = "[Buffer]",
     path = "[Path]",
+    nvim_lsp = "[LSP]",
 }
 
 -- more info about how to configure this:
@@ -69,6 +70,7 @@ cmp.setup {
         { name = "buffer" },
         { name = "path" },
         { name = "npm", keyword_length = 4 }, -- TODO: be sure it is works
+        { name = "nvim_lsp" },
     },
 
     -- setup nvim-cmp keymaps
