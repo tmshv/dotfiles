@@ -71,6 +71,9 @@ configs.setup({
     autopairs = {
         enable = true,
     },
+    autotag = {
+        enable = true,
+    },
     context_commentstring = { -- enable context for smart JSX comments
         enable = true,
         enable_autocmd = false, -- disable the CursorHold autocommand (for Comment.nvim)

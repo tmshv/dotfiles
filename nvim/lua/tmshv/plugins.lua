@@ -14,6 +14,10 @@ return function(use)
     use "numToStr/Comment.nvim" -- code commenting
     use "lukas-reineke/indent-blankline.nvim"
     use "folke/which-key.nvim"
+    use ({                             -- autoclose tags
+        "windwp/nvim-ts-autotag",
+        after = "nvim-treesitter"
+    })
 
     -- COLORS
     use ({ "lunarvim/darkplus.nvim" })
