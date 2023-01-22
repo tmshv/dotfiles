@@ -66,11 +66,11 @@ cmp.setup {
     -- sources to nvim-cmp are here
     -- order of the list make sense
     sources = {
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         { name = "npm", keyword_length = 4 }, -- TODO: be sure it is works
-        { name = "nvim_lsp" },
     },
 
     -- setup nvim-cmp keymaps
