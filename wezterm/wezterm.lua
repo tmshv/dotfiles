@@ -18,9 +18,9 @@ local function scheme_for_appearance(appearance)
 		-- return "Royal"
 		-- return "Sakura"
 		-- retrun "SeaShells"
-		-- return "Sequoia Monochrome"
+		return "Sequoia Monochrome"
 		-- return "Sex Colors (terminal.sexy)"
-		return "Dark Violet (base16)"
+		-- return "Dark Violet (base16)"
 	end
 end
 
