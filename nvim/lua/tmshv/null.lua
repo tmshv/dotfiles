@@ -6,9 +6,17 @@ end
 
 null_ls.setup({
     sources = {
-        --[[ null_ls.builtins.formatting.stylua, ]]
+        -- lua
+        -- null_ls.builtins.formatting.stylua,
+
+        -- js/ts
         null_ls.builtins.diagnostics.eslint,
+
+        -- python
+        null_ls.builtins.formatting.black,
+        -- null_ls.builtins.formatting.isort,
+        -- null_ls.builtins.diagnostics.flake8,
+
         --[[ null_ls.builtins.completion.spell, ]]
     },
 })
-
