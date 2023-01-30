@@ -14,77 +14,77 @@ return function(use)
     use "numToStr/Comment.nvim" -- code commenting
     use "lukas-reineke/indent-blankline.nvim"
     use "folke/which-key.nvim"
-    use ({                             -- autoclose tags
+    use({ -- autoclose tags
         "windwp/nvim-ts-autotag",
         after = "nvim-treesitter"
     })
 
     -- COLORS
-    use ({ "lunarvim/darkplus.nvim" })
-    use ({
+    use({ "lunarvim/darkplus.nvim" })
+    use({
         "rose-pine/neovim",
         as = "rose-pine",
     })
 
     -- SNIPPETS
-    use "L3MON4D3/LuaSnip"             --snippet engine
+    use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- AUTOCOMPLETE (nvim-cmp based)
     -- TODO: make it opt as posible
-    use "hrsh7th/nvim-cmp"             -- completion plugin
-    use "hrsh7th/cmp-buffer"           -- buffer completions source
-    use "hrsh7th/cmp-path"             -- path completions source
-    use "hrsh7th/cmp-cmdline"          -- cmdline completions source
-    use "saadparwaiz1/cmp_luasnip"     -- snippet completions source
-    use "hrsh7th/cmp-nvim-lua"         -- lua completions source
-    use ({                             -- package.json copmletions source
+    use "hrsh7th/nvim-cmp" -- completion plugin
+    use "hrsh7th/cmp-buffer" -- buffer completions source
+    use "hrsh7th/cmp-path" -- path completions source
+    use "hrsh7th/cmp-cmdline" -- cmdline completions source
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions source
+    use "hrsh7th/cmp-nvim-lua" -- lua completions source
+    use({ -- package.json copmletions source
         "David-Kunz/cmp-npm",
         requires = { "nvim-lua/plenary.nvim" }
     })
 
     -- LSP
-    use "neovim/nvim-lspconfig"              -- enable LSP
-    use "williamboman/mason.nvim"            -- UI for LSP servers
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/mason.nvim" -- UI for LSP servers
     use "williamboman/mason-lspconfig.nvim"
-    use ({
-        "hrsh7th/cmp-nvim-lsp",              -- LSP completions source
+    use({
+        "hrsh7th/cmp-nvim-lsp", -- LSP completions source
         requires = {
             { "hrsh7th/nvim-cmp" },
         }
     })
-    use ({
-        "VonHeikemen/lsp-zero.nvim",         -- LSP autoconfig
+    use({
+        "VonHeikemen/lsp-zero.nvim", -- LSP autoconfig
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         }
     })
     use "jose-elias-alvarez/null-ls.nvim"
 
     -- TELESCOPE
-    use ({
+    use({
         "nvim-telescope/telescope.nvim",
-        requires = { {"nvim-lua/plenary.nvim"} }
+        requires = { { "nvim-lua/plenary.nvim" } }
     })
     -- use 'nvim-telescope/telescope-media-files.nvim'
 
     -- TREE
-    use ({
+    use({
         "nvim-tree/nvim-tree.lua",
         requires = {
             "nvim-tree/nvim-web-devicons", -- optional, for file icons
@@ -93,18 +93,18 @@ return function(use)
     })
 
     -- TREESITTER
-    use ({
+    use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     })
     use "p00f/nvim-ts-rainbow"
-    use "JoosepAlviste/nvim-ts-context-commentstring" -- for smart JSX commenting 
+    use "JoosepAlviste/nvim-ts-context-commentstring" -- for smart JSX commenting
 
     -- GIT
     use "lewis6991/gitsigns.nvim"
 
     -- TABS
-    use ({
+    use({
         "akinsho/bufferline.nvim",
         tag = "v3.*",
         requires = "nvim-tree/nvim-web-devicons",
@@ -118,5 +118,5 @@ return function(use)
             opt = true,
         },
     }
-end
 
+end
