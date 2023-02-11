@@ -1,6 +1,6 @@
 local status_ok, tree = pcall(require, "nvim-tree")
 if not status_ok then
-  return
+    return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
@@ -11,7 +11,7 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 tree.setup({
---  sort_by = "case_sensitive",
+    --  sort_by = "case_sensitive",
     filters = {
         dotfiles = true,
     },
@@ -50,7 +50,7 @@ tree.setup({
             custom_only = false,
             list = {
                 { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-                { key = "h", cb = tree_cb "close_node" },
+                { key = "h",                  cb = tree_cb "close_node" },
                 --[[ { key = "v", cb = tree_cb "vsplit" }, ]]
             },
         },
