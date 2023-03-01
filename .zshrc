@@ -3,6 +3,10 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+export EDITOR='nvim'
+export DEFAULT_USER='tmshv'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -92,9 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -103,16 +104,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vi="vim"
-alias ll="lsd -l"
 
-export PATH="$PATH:/Users/tmshv/Dropbox/bin"
+# setup LSD
+alias ls="lsd"
+alias l="ls -l"
+alias la="ls -la"
+alias lt="ls --tree"
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+# setup KITTY
+alias ssh="kitty +kitten ssh"
+alias icat="kitty +kitten icat --align=left"
 
-export PATH=/Users/tmshv/.local/bin:$PATH
+# setup FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# eval $(thefuck --alias)
-#
+# setup ZOXIDE
+# eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh)"
