@@ -42,6 +42,9 @@ return {
 		cursor_bg = '#ff0',
 	},
 
+    window_background_opacity = 0.90,
+    macos_window_background_blur = 0,
+
 	tab_bar_style = {
 		-- active_tab_left = wezterm.format {
 		-- 	{ Background = { Color = '#fa00fa' } },
