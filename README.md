@@ -2,7 +2,7 @@
 
 ## VM.SH
 
-Install zsh | git | vim | tmux on new VM. Script has written by GPT-4
+Install `zsh` | `git` | `vim` | `tmux` on new VM. Script has written by GPT-4
 
 Setup `vm.sh` on your VM
 
