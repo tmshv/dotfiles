@@ -11,7 +11,27 @@
         "metrics": false,
         "diagnostics": false
     },
+    "vim_mode": true,
+    "enable_language_server": true,
+    "ensure_final_newline_on_save": true,
+    "remove_trailing_whitespace_on_save": true,
     "theme": "Rosé Pine",
+    "tab_size": 4,
+    "preferred_line_length": 120,
+    "hour_format": "hour24",
+    "format_on_save": "on",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
     "base_keymap": "VSCode",
-    "buffer_font_size": 13
+    "buffer_font_size": 13,
+    "autosave": "on_focus_change",
+    "terminal": {
+        "alternate_scroll": "off",
+        "blinking": "terminal_controlled",
+        "copy_on_select": true,
+        "env": {
+            "ZED": "1"
+        },
+        "option_as_meta": false,
+        "working_directory": "current_project_directory"
+    }
 }
