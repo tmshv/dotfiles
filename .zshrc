@@ -4,6 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Path
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/Users/tmshv/.local/bin:$PATH"
 export EDITOR='nvim'
 export DEFAULT_USER='tmshv'
 
