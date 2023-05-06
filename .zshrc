@@ -132,3 +132,8 @@ function notify {
     curl -d "$message" https://ntfy.sh/tmshv
 }
 
+# Setup atuin.sh
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+eval "$(atuin init zsh)"
