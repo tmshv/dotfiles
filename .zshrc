@@ -139,4 +139,4 @@ function notify {
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
