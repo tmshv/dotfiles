@@ -148,7 +148,7 @@ tree.setup({
         timeout = 50,
     },
     view = {
-        hide_root_folder = false,
+        hide_root_folder = true, -- Tabs will show it. More info in tabs.lua (offset text function)
         side = "left",
         mappings = {
             custom_only = false,

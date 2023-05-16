@@ -80,9 +80,15 @@ bufferline.setup({
         offsets = {
             {
                 filetype = "NvimTree",
-                text = "File Explorer",
-                --[[ text_align = "left" | "center" | "right" ]]
+                text = function()
+                    local cwd = vim.fn.getcwd()
+                    local dir = cwd:match("[^/]+$")
+                    return "󰉋 " .. dir .. " File Explorer"
+                end,
                 separator = true,
+                text_align = "left",
+                -- text_align = "center",
+                -- text_align = "right",
             }
         },
         color_icons = false,             -- whether or not to add the filetype icon highlights
