@@ -180,11 +180,11 @@ tree.setup({
                 symlink = "",
                 git = {
                     unstaged = "",
-                    staged = "S",
+                    staged = "",
                     unmerged = "",
-                    renamed = "➜",
+                    renamed = "",
                     deleted = "",
-                    untracked = "U",
+                    untracked = "",
                     ignored = "◌",
                 },
                 folder = {
