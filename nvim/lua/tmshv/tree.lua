@@ -148,7 +148,6 @@ tree.setup({
         timeout = 50,
     },
     view = {
-        hide_root_folder = true, -- Tabs will show it. More info in tabs.lua (offset text function)
         side = "left",
         mappings = {
             custom_only = false,
@@ -167,6 +166,7 @@ tree.setup({
     --[[ }, ]]
     renderer = {
         highlight_git = true,
+        root_folder_label = false, -- Tabs will show it. More info in tabs.lua (offset text function)
         root_folder_modifier = ":t",
         icons = {
             show = {
