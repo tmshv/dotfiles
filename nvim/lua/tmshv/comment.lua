@@ -3,6 +3,7 @@ if not status_ok then
     return
 end
 
+-- setup context for JSX commenting
 local pre_hook = nil
 local status_ok, ts_context_commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
 if status_ok then
@@ -32,7 +33,6 @@ comment.setup {
         basic = true,
         extra = false,
     },
-    -- setup context for JSX commenting
     pre_hook = pre_hook,
     post_hook = nil,
 }
