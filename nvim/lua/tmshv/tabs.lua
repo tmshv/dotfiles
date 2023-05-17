@@ -7,14 +7,14 @@ end
 bufferline.setup({
     options = {
         mode = "buffers",                    -- set to "tabs" to only show tabpages instead
-        numbers = "none",                 -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string, ]]
+        numbers = "none",                    -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string, ]]
         close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
         indicator = {
-            --[[ icon = '▎', -- this should be omitted if indicator style is not 'icon' ]]
-            style = "icon", -- "underline" | "icon" | "none"
+            style = "none",                  -- "underline" | "icon" | "none"
+            -- icon = "▎",                   -- this should be omitted if indicator style is not 'icon'
         },
         buffer_close_icon = "󰅖",
         modified_icon = "●",
