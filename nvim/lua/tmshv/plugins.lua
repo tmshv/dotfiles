@@ -13,8 +13,12 @@ return function(use)
     use "windwp/nvim-autopairs" -- autopair (), [], {} etc.
     use "numToStr/Comment.nvim" -- code commenting
     use "lukas-reineke/indent-blankline.nvim"
-    use "folke/which-key.nvim"
-    use({ -- autoclose tags
+    use({
+        "folke/which-key.nvim",
+        lazy = true,
+    })
+    use({
+          -- autoclose tags
         "windwp/nvim-ts-autotag",
         after = "nvim-treesitter"
     })
