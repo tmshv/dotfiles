@@ -2,7 +2,14 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- functions for setting up shortcuts
-local keymap = vim.api.nvim_set_keymap
+-- local keymap = vim.api.nvim_set_keymap
+local function keymap(mode, lhs, rhs, opts)
+    local options = { noremap = true, silent = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.keymap.set(mode, lhs, rhs, options)
+end
 
 -- set leader key: "Space" | " "
 keymap("", "<Space>", "<Nop>", opts)
@@ -38,22 +45,26 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- toggle file tree on leader+e
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
--- keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- can be used as fallback
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
 
 -- save
-keymap("n", "<C-s>", "<cmd> w <CR>", opts) -- save file
+keymap("n", "<C-s>", "<cmd> w <CR>", { desc = "Save file" }) -- save file
 
 -- toggle relative number
 keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 
 -- new buffer
-keymap("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
+keymap("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" }) -- new buffer
 
 -- LSP keymaps
-keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format" })
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
+-- files keymaps
+keymap("n", "<leader>ff", "<cmd>Telescope find_files <CR>", { desc = "Files" })
+keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (with hidden)" })
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep <CR>", { desc = "Grep" })
 
 -- copy all
 -- ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
@@ -96,4 +107,26 @@ keymap("v", "p", '"_dP', opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+---------------------
+-- General Keymaps
+---------------------
+
+keymap("n", "x", '"_x')  -- delete single character without copying into register
+-- keymap.set("n", "d", '"_d') -- delete without copying into register
+keymap("v", "p", '"_dP') -- paste without copying deleted value into register
+
+-- window management
+keymap("n", "<leader>wv", "<C-w>v", { desc = "Split vertically" })             -- split window vertically
+keymap("n", "<leader>wh", "<C-w>s", { desc = "Split horizontally" })           -- split window horizontally
+keymap("n", "<leader>we", "<C-w>=", { desc = "Split equal width and height" }) -- make split windows equal width & height
+keymap("n", "<leader>wx", ":close<CR>", { desc = "Close window" })             -- close current split window
+
+keymap("n", "<leader>to", ":tabnew<CR>", { desc = "New tab" })                 -- open new tab
+keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close tab" })             -- close current tab
+keymap("n", "<leader>tn", ":tabn<CR>", { desc = "Go to next tab" })            --  go to next tab
+keymap("n", "<leader>tp", ":tabp<CR>", { desc = "Go to prev tab" })            --  go to previous tab
+
+keymap("n", "H", ":bprevious<CR>")                                             -- go to prev buffer
+keymap("n", "L", ":bnext<CR>")                                                 -- go to next buffer
 
