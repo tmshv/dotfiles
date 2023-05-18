@@ -17,6 +17,7 @@
     "remove_trailing_whitespace_on_save": true,
     "theme": "Rosé Pine",
     "tab_size": 4,
+    "show_whitespaces": "selection",
     "preferred_line_length": 120,
     "hour_format": "hour24",
     "format_on_save": "on",
