@@ -61,10 +61,14 @@ keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Co
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format" })
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
--- files keymaps
-keymap("n", "<leader>ff", "<cmd>Telescope find_files <CR>", { desc = "Files" })
-keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (with hidden)" })
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep <CR>", { desc = "Grep" })
+-- telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files <CR>", { desc = "Files" })                           -- find files within current working directory, respects .gitignore
+keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (with hidden)" }) -- find files within current working directory, respects .gitignore
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep <CR>", { desc = "Grep" })                             -- find string in current working directory as you type
+keymap("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Git files" })                         -- Fuzzy search through the output of git ls-files command, respects .gitignore
+keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")                                               -- find string under cursor in current working directory
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })                             -- list open buffers in current neovim instance
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })                         -- list available help tags
 
 -- copy all
 -- ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
@@ -130,3 +134,6 @@ keymap("n", "<leader>tp", ":tabp<CR>", { desc = "Go to prev tab" })            -
 keymap("n", "H", ":bprevious<CR>")                                             -- go to prev buffer
 keymap("n", "L", ":bnext<CR>")                                                 -- go to next buffer
 
+-- center cursor on the next page
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "<C-d>", "<C-d>zz")
