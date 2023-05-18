@@ -11,19 +11,28 @@
         "metrics": false,
         "diagnostics": false
     },
+    // Features that can be globally enabled or disabled
+    "features": {
+        // Show Copilot icon in status bar
+        "copilot": false
+    },
+    // Whether to enable vim modes and key bindings
     "vim_mode": true,
     "enable_language_server": true,
     "ensure_final_newline_on_save": true,
     "remove_trailing_whitespace_on_save": true,
-    "theme": "Rosé Pine",
+    // The name of the Zed theme to use for the UI
+    "theme": "Rosé Pine Dawn",
     "tab_size": 4,
     "show_whitespaces": "selection",
     "preferred_line_length": 120,
     "hour_format": "hour24",
     "format_on_save": "on",
+    // The name of a font to use for rendering text in the editor
     "buffer_font_family": "JetBrainsMono Nerd Font",
-    "base_keymap": "VSCode",
+    // The default font size for text in the editor
     "buffer_font_size": 13,
+    "base_keymap": "VSCode",
     "autosave": "on_focus_change",
     "terminal": {
         "alternate_scroll": "off",
