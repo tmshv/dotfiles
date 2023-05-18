@@ -62,13 +62,25 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format"
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
 -- telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files <CR>", { desc = "Files" })                           -- find files within current working directory, respects .gitignore
-keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (with hidden)" }) -- find files within current working directory, respects .gitignore
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep <CR>", { desc = "Grep" })                             -- find string in current working directory as you type
-keymap("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Git files" })                         -- Fuzzy search through the output of git ls-files command, respects .gitignore
-keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")                                               -- find string under cursor in current working directory
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })                             -- list open buffers in current neovim instance
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })                         -- list available help tags
+local status_ok, builtin = pcall(require, "telescope.builtin")
+if status_ok then
+    keymap("n", "<leader>ff", builtin.find_files, { desc = "Files" })                                         -- find files within current working directory, respects .gitignore
+    keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (with hidden)" }) -- find files within current working directory, respects .gitignore
+    keymap("n", "<leader>fg", builtin.git_files, { desc = "Git files" })                                      -- Fuzzy search through the output of git ls-files command, respects .gitignore
+    keymap("n", "<leader>fg", builtin.live_grep, { desc = "Grep" })                                           -- find string in current working directory as you type
+    keymap("n", "<leader>fc", builtin.grep_string, { desc = "Grep string" })
+    keymap("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })                                          -- list open buffers in current neovim instance
+    keymap("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })                                      -- list available help tags
+
+    keymap("n", "<leader>th", builtin.colorscheme, { desc = "Theme" })
+    keymap("n", "<leader>tk", builtin.keymaps, { desc = "Keymaps" })
+
+    keymap("n", "<leader>gd", builtin.lsp_definitions, { desc = "LSP Definitions" }) -- TODO: to gd
+    keymap("n", "<leader>gr", builtin.lsp_references, { desc = "LSP Referencies" })  -- TODO: to gd
+
+    keymap("n", "<C-g>", builtin.git_files, { desc = "Git files" })
+    keymap("n", "<C-p>", builtin.commands, { desc = "Command Palette" })
+end
 
 -- copy all
 -- ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },

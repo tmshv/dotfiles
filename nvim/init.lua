@@ -1,5 +1,4 @@
 require("tmshv.options")
-require("tmshv.keymaps")
 
 local plugins = require("tmshv.packer")
 plugins(require("tmshv.plugins"))
@@ -18,4 +17,4 @@ require("tmshv.git")
 require("tmshv.tabs")
 require("tmshv.status")
 require("tmshv.whichkey")
-
+require("tmshv.keymaps")
