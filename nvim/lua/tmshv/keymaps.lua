@@ -95,6 +95,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         keymap("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
         keymap("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Go to implementation" })
         keymap("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "Go to reference" })
+        keymap("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
         -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         keymap("n", "<leader>lk", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Signature help" })
         -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
