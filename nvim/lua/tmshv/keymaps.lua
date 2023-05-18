@@ -1,6 +1,19 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
+local wk_status_ok, wk = pcall(require, "which-key")
+if wk_status_ok then
+    wk.register({
+        f = { name = "Find" },
+        g = { name = "Git" },
+        l = { name = "LSP" },
+        t = { name = "Tab" },
+        b = { name = "Buffer" },
+        w = { name = "Window" },
+        n = { name = "Editor" },
+    }, { prefix = "<leader>" })
+end
+
 -- functions for setting up shortcuts
 -- local keymap = vim.api.nvim_set_keymap
 local function keymap(mode, lhs, rhs, opts)
@@ -53,33 +66,31 @@ keymap("n", "<C-s>", "<cmd> w <CR>", { desc = "Save file" }) -- save file
 -- toggle relative number
 keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 
--- new buffer
-keymap("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" }) -- new buffer
-
 -- LSP keymaps
 keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format" })
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
 -- telescope
-local status_ok, builtin = pcall(require, "telescope.builtin")
+local status_ok, telescope = pcall(require, "telescope.builtin")
 if status_ok then
-    keymap("n", "<leader>ff", builtin.find_files, { desc = "Files" })                                         -- find files within current working directory, respects .gitignore
-    keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (with hidden)" }) -- find files within current working directory, respects .gitignore
-    keymap("n", "<leader>fg", builtin.git_files, { desc = "Git files" })                                      -- Fuzzy search through the output of git ls-files command, respects .gitignore
-    keymap("n", "<leader>fg", builtin.live_grep, { desc = "Grep" })                                           -- find string in current working directory as you type
-    keymap("n", "<leader>fc", builtin.grep_string, { desc = "Grep string" })
-    keymap("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })                                          -- list open buffers in current neovim instance
-    keymap("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })                                      -- list available help tags
+    -- find
+    keymap("n", "<leader>ff", telescope.find_files, { desc = "Files" })                                       -- find files within current working directory, respects .gitignore
+    keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (+ hidden)" }) -- find files within current working directory, respects .gitignore
+    keymap("n", "<leader>fg", telescope.git_files, { desc = "Git files" })                                    -- Fuzzy search through the output of git ls-files command, respects .gitignore
+    keymap("n", "<leader>fg", telescope.live_grep, { desc = "Grep" })                                         -- find string in current working directory as you type
+    keymap("n", "<leader>fc", telescope.grep_string, { desc = "Grep string" })
+    keymap("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })                                        -- list open buffers in current neovim instance
+    keymap("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })                                    -- list available help tags
+    keymap("n", "<leader>fk", telescope.keymaps, { desc = "Keymaps" })
+    keymap("n", "<leader>fd", telescope.lsp_definitions, { desc = "LSP Definitions" })                        -- TODO: to gd
+    keymap("n", "<leader>fr", telescope.lsp_references, { desc = "LSP Referencies" })                         -- TODO: to gd
 
-    keymap("n", "<leader>th", builtin.colorscheme, { desc = "Theme" })
-    keymap("n", "<leader>tk", builtin.keymaps, { desc = "Keymaps" })
+    -- settings
+    keymap("n", "<leader>nh", telescope.colorscheme, { desc = "Theme" }) -- set theme
 
-    keymap("n", "<leader>gd", builtin.lsp_definitions, { desc = "LSP Definitions" }) -- TODO: to gd
-    keymap("n", "<leader>gr", builtin.lsp_references, { desc = "LSP Referencies" })  -- TODO: to gd
-
-    keymap("n", "<C-g>", builtin.git_files, { desc = "Git files" })
-    keymap("n", "<C-p>", builtin.commands, { desc = "Command Palette" })
+    keymap("n", "<C-g>", telescope.git_files, { desc = "Git files" })
+    keymap("n", "<C-p>", telescope.commands, { desc = "Command Palette" })
 end
 
 -- copy all
@@ -138,13 +149,17 @@ keymap("n", "<leader>wh", "<C-w>s", { desc = "Split horizontally" })           -
 keymap("n", "<leader>we", "<C-w>=", { desc = "Split equal width and height" }) -- make split windows equal width & height
 keymap("n", "<leader>wx", ":close<CR>", { desc = "Close window" })             -- close current split window
 
-keymap("n", "<leader>to", ":tabnew<CR>", { desc = "New tab" })                 -- open new tab
-keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close tab" })             -- close current tab
-keymap("n", "<leader>tn", ":tabn<CR>", { desc = "Go to next tab" })            --  go to next tab
-keymap("n", "<leader>tp", ":tabp<CR>", { desc = "Go to prev tab" })            --  go to previous tab
+-- Tab management
+keymap("n", "<leader>to", ":tabnew<CR>", { desc = "New tab" })      -- open new tab
+keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close tab" })  -- close current tab
+keymap("n", "<leader>tn", ":tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap("n", "<leader>tp", ":tabp<CR>", { desc = "Go to prev tab" }) --  go to previous tab
 
-keymap("n", "H", ":bprevious<CR>")                                             -- go to prev buffer
-keymap("n", "L", ":bnext<CR>")                                                 -- go to next buffer
+-- Buffer management
+keymap("n", "<leader>bo", "<cmd> enew <CR>", { desc = "New buffer" }) -- open new buffer
+
+keymap("n", "H", ":bprevious<CR>")                                    -- go to prev buffer
+keymap("n", "L", ":bnext<CR>")                                        -- go to next buffer
 
 -- center cursor on the next page
 keymap("n", "<C-u>", "<C-u>zz")
