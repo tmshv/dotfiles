@@ -149,3 +149,12 @@ keymap("n", "L", ":bnext<CR>")                                                 -
 -- center cursor on the next page
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
+
+-- Comment line
+local function smart_comment()
+    local vvar = vim.api.nvim_get_vvar
+    return vvar("count") == 0 and "<Plug>(comment_toggle_linewise_current)" or "<Plug>(comment_toggle_linewise_count)"
+end
+keymap("n", "<leader>/", smart_comment, { expr = true, desc = "Comment" })
+keymap("x", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", { desc = "Comment" })
+
