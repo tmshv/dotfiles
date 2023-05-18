@@ -67,24 +67,67 @@ keymap("n", "<C-s>", "<cmd> w <CR>", { desc = "Save file" }) -- save file
 keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 
 -- LSP keymaps
-keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format" })
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
-keymap("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
+local function format_async()
+    vim.lsp.buf.format { async = true }
+end
+keymap("n", "<leader>lf", format_async, { desc = "Format" })
+keymap("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Actions" })
+keymap("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
+keymap("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Diagnostics" })
+keymap("n", "<leader>lq", vim.diagnostic.setloclist, { desc = "Loclist" })
+
+
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+keymap("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostics prev" })
+keymap("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostics next" })
+
+-- Use LspAttach autocommand to only map the following keys
+-- after the language server attaches to the current buffer
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+    callback = function(ev)
+        -- Enable completion triggered by <c-x><c-o>
+        vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+        -- Buffer local mappings.
+        -- See `:help vim.lsp.*` for documentation on any of the below functions
+        keymap("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to declaration" })
+        keymap("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
+        keymap("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Go to implementation" })
+        keymap("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "Go to reference" })
+        -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        keymap("n", "<leader>lk", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Signature help" })
+        -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+        -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+        -- vim.keymap.set('n', '<space>wl', function()
+        --     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        -- end, opts)
+        -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+        -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+        -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+        -- vim.keymap.set('n', '<space>f', function()
+        --     vim.lsp.buf.format { async = true }
+        -- end, opts)
+    end,
+})
+
 -- telescope
 local status_ok, telescope = pcall(require, "telescope.builtin")
 if status_ok then
     -- find
-    keymap("n", "<leader>ff", telescope.find_files, { desc = "Files" })                                       -- find files within current working directory, respects .gitignore
+    keymap("n", "<leader>ff", telescope.find_files, { desc = "Files" })                                    -- find files within current working directory, respects .gitignore
     keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (+ hidden)" }) -- find files within current working directory, respects .gitignore
-    keymap("n", "<leader>fg", telescope.git_files, { desc = "Git files" })                                    -- Fuzzy search through the output of git ls-files command, respects .gitignore
-    keymap("n", "<leader>fg", telescope.live_grep, { desc = "Grep" })                                         -- find string in current working directory as you type
+    keymap("n", "<leader>fp", telescope.git_files, { desc = "Git files" })                                 -- Fuzzy search through the output of git ls-files command, respects .gitignore
+    keymap("n", "<leader>fg", telescope.live_grep, { desc = "Grep" })                                      -- find string in current working directory as you type
     keymap("n", "<leader>fc", telescope.grep_string, { desc = "Grep string" })
-    keymap("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })                                        -- list open buffers in current neovim instance
-    keymap("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })                                    -- list available help tags
+    keymap("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })                                     -- list open buffers in current neovim instance
+    keymap("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })                                 -- list available help tags
     keymap("n", "<leader>fk", telescope.keymaps, { desc = "Keymaps" })
-    keymap("n", "<leader>fd", telescope.lsp_definitions, { desc = "LSP Definitions" })                        -- TODO: to gd
-    keymap("n", "<leader>fr", telescope.lsp_references, { desc = "LSP Referencies" })                         -- TODO: to gd
+    -- keymap("n", "<leader>fd", telescope.lsp_definitions, { desc = "LSP Definitions" })                     -- TODO: to gd
+    -- keymap("n", "<leader>fr", telescope.lsp_references, { desc = "LSP Referencies" })                      -- TODO: to gd
+
+    -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
+    keymap("n", "<leader>fd", telescope.diagnostics, { desc = "Diagnostics" })
 
     -- settings
     keymap("n", "<leader>nh", telescope.colorscheme, { desc = "Theme" }) -- set theme
