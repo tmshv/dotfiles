@@ -1,0 +1,144 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "dendron.enableSelfContainedVaultWorkspace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "editor.cursorStyle": "line",
+    "editor.fontFamily": "JetBrains Mono, Iosevka, Fira Code, Cascadia Code, Menlo, monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "alt",
+    "editor.renameOnType": true,
+    "editor.suggestSelection": "first",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
+    "files.associations": {
+        "*.geojson": "json"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 100,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.untrackedChanges": "separate",
+    "go.useLanguageServer": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "jupyter.alwaysTrustNotebooks": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.maxOutputSize": 800,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "map.preview.coordinateDisplay.format": "Lat: {lat}, Lng: {lng}",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+    "notebook.output.textLineLimit": 300,
+    "prettier.printWidth": 120,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "all",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.jediEnabled": false,
+    "python.languageServer": "Pylance",
+    "python.linting.mypyEnabled": true,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.showStartPage": false,
+    "redhat.telemetry.enabled": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "svelte.enable-ts-plugin": true,
+    "svelte.plugin.svelte.note-new-transformation": false,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "terminal.integrated.rendererType": "experimentalWebgl",
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "vetur.format.options.tabSize": 4,
+    "vim.camelCaseMotion.enable": true,
+    "vim.history": 500,
+    "vim.useSystemClipboard": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "SynthWave '84",
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 5,
+    "workbench.editor.showTabs": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.panel.defaultLocation": "right",
+    "workbench.statusBar.visible": true,
+    "workbench.tree.indent": 4,
+    "zenMode.centerLayout": false,
+    "zenMode.hideLineNumbers": false,
+    "python.formatting.provider": "black",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "python.defaultInterpreterPath": "/Users/tmshv/Work/UNIT/faceai/.venv",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "vscode-neovim.mouseSelectionStartVisualMode": true,
+    "vscode-neovim.highlightGroups.highlights": {
+        "Directory": "vim",
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground",
+            "borderColor": "theme.editor.findMatchBorder"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground",
+            "borderColor": "theme.editor.findMatchHighlightBorder"
+        },
+        "Visual": {
+            "backgroundColor": "theme.editor.selectionBackground"
+        },
+        "Conceal": "vim",
+        "Substitute": "vim"
+    },
+    "window.commandCenter": true,
+    "terminal.external.osxExec": "Kitty.app",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "CodeGPT.temperature": 0.7
+}
