@@ -148,6 +148,7 @@ tree.setup({
         timeout = 50,
     },
     view = {
+        width = 40,
         side = "left",
         mappings = {
             custom_only = false,
