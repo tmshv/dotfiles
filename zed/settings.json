@@ -16,6 +16,13 @@
         // Show Copilot icon in status bar
         "copilot": false
     },
+    "inlay_hints": {
+        "enabled": true,
+        "show_type_hints": true,
+        "show_parameter_hints": true,
+        "show_other_hints": true
+    },
+    "show_wrap_guides": true,
     // Whether to enable vim modes and key bindings
     "vim_mode": true,
     "enable_language_server": true,
@@ -28,6 +35,10 @@
     "preferred_line_length": 120,
     "hour_format": "hour24",
     "format_on_save": "on",
+    "formatter": "language_server",
+    "git": {
+        "git_gutter": "tracked_files"
+    },
     // The name of a font to use for rendering text in the editor
     "buffer_font_family": "JetBrainsMono Nerd Font",
     // The default font size for text in the editor
