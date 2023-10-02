@@ -25,6 +25,7 @@
     "show_wrap_guides": true,
     // Whether to enable vim modes and key bindings
     "vim_mode": true,
+    "relative_line_numbers": true,
     "enable_language_server": true,
     "ensure_final_newline_on_save": true,
     "remove_trailing_whitespace_on_save": true,
