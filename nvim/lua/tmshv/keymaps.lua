@@ -4,7 +4,7 @@ local term_opts = { silent = true }
 local wk_status_ok, wk = pcall(require, "which-key")
 if wk_status_ok then
     wk.register({
-        f = { name = "Find" },
+        s = { name = "Search" },
         g = { name = "Git" },
         l = { name = "LSP" },
         t = { name = "Tab" },
