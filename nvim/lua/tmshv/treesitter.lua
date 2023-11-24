@@ -74,19 +74,6 @@ configs.setup({
     autotag = {
         enable = true,
     },
-    context_commentstring = { -- enable context for smart JSX comments
-        enable = true,
-        enable_autocmd = false, -- disable the CursorHold autocommand (for Comment.nvim)
-        -- config = {
-        --     javascript = {
-        --         __default = '// %s',
-        --         jsx_element = '{/* %s */}',
-        --         jsx_fragment = '{/* %s */}',
-        --         jsx_attribute = '// %s',
-        --         comment = '// %s'
-        --     }
-        -- }
-    },
     rainbow = {
         enable = true,
         extended_mode = true,
