@@ -8,13 +8,6 @@ end
 -- as described here https://github.com/JoosepAlviste/nvim-ts-context-commentstring
 vim.g.skip_ts_context_commentstring_module = true
 
--- setup context for JSX commenting
-local pre_hook = nil
-local status_ok_tscc, ts_context_commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
-if status_ok_tscc then
-    pre_hook = ts_context_commentstring.create_pre_hook()
-end
-
 comment.setup {
     -- Add a space b/w comment and the line
     padding = true,
@@ -25,7 +18,9 @@ comment.setup {
     -- Do not create mappings here: it is defined at keymap file
     mappings = false,
     -- Function to call before (un)comment
-    pre_hook = pre_hook,
+    pre_hook = function()
+        return vim.bo.commentstring
+    end,
     -- Function to call after (un)comment
     post_hook = nil,
 }
