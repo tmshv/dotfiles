@@ -23,7 +23,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.dotenv_linter,
 
 		-- Markdown style and syntax checker.
-		null_ls.builtins.diagnostics.markdownlint,
+		-- null_ls.builtins.diagnostics.markdownlint,
 
 		-- Tidy corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
 		null_ls.builtins.diagnostics.tidy,
