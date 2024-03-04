@@ -22,17 +22,28 @@ lsp.skip_server_setup({
     -- "angularls",
 })
 
--- how to configure a language server
+-- Configure tsserver for nodejs driven project only
 lsp.configure("tsserver", {
-    on_attach = function(client, bufnr)
-        -- print('hello tsserver')
-        -- TODO: disable resolved_capabilies.document_formatting = fasle
-    end,
-    -- settings = {
-    --   completions = {
-    --     completeFunctionCalls = true
-    --   }
-    -- }
+	on_attach = function(client, bufnr)
+		-- print("hello tsserver")
+		-- TODO: disable resolved_capabilies.document_formatting = fasle
+	end,
+	root_dir = nvim_lsp.util.root_pattern("package.json"),
+	single_file_support = false,
+	-- settings = {
+	--   completions = {
+	--     completeFunctionCalls = true
+	--   }
+	-- }
+})
+
+-- Configure denols for deno projects
+lsp.configure("denols", {
+	on_attach = function(client, bufnr)
+		-- print("hello denols")
+		-- TODO: disable resolved_capabilies.document_formatting = fasle
+	end,
+	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 })
 
 lsp.configure("eslint", {
