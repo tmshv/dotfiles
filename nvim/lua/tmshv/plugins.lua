@@ -79,7 +79,7 @@ return function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     })
-    use "jose-elias-alvarez/null-ls.nvim"
+    use "nvimtools/none-ls.nvim"
 
     -- TELESCOPE
     use({
