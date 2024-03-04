@@ -103,7 +103,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- vim.keymap.set('n', '<space>wl', function()
         --     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         -- end, opts)
-        -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
         -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
         -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
         -- vim.keymap.set('n', '<space>f', function()
@@ -115,20 +114,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- telescope
 local status_ok, telescope = pcall(require, "telescope.builtin")
 if status_ok then
+    keymap("n", "<leader>f", telescope.find_files, { desc = "Files" })                                    -- find files within current working directory, respects .gitignore
+
     -- find
-    keymap("n", "<leader>ff", telescope.find_files, { desc = "Files" })                                    -- find files within current working directory, respects .gitignore
-    keymap("n", "<leader>fF", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (+ hidden)" }) -- find files within current working directory, respects .gitignore
-    keymap("n", "<leader>fp", telescope.git_files, { desc = "Git files" })                                 -- Fuzzy search through the output of git ls-files command, respects .gitignore
-    keymap("n", "<leader>fg", telescope.live_grep, { desc = "Grep" })                                      -- find string in current working directory as you type
-    keymap("n", "<leader>fc", telescope.grep_string, { desc = "Grep string" })
-    keymap("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })                                     -- list open buffers in current neovim instance
-    keymap("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })                                 -- list available help tags
-    keymap("n", "<leader>fk", telescope.keymaps, { desc = "Keymaps" })
+    keymap("n", "<leader>sf", "<cmd>Telescope find_files hidden=true <CR>", { desc = "Files (+ hidden)" }) -- find files within current working directory, respects .gitignore
+    keymap("n", "<leader>sp", telescope.git_files, { desc = "Git files" })                                 -- Fuzzy search through the output of git ls-files command, respects .gitignore
+    keymap("n", "<leader>sg", telescope.live_grep, { desc = "Grep" })                                      -- find string in current working directory as you type
+    keymap("n", "<leader>sc", telescope.grep_string, { desc = "Grep string" })
+    keymap("n", "<leader>sb", telescope.buffers, { desc = "Buffers" })                                     -- list open buffers in current neovim instance
+    keymap("n", "<leader>sh", telescope.help_tags, { desc = "Help tags" })                                 -- list available help tags
+    keymap("n", "<leader>sk", telescope.keymaps, { desc = "Keymaps" })
     -- keymap("n", "<leader>fd", telescope.lsp_definitions, { desc = "LSP Definitions" })                     -- TODO: to gd
     -- keymap("n", "<leader>fr", telescope.lsp_references, { desc = "LSP Referencies" })                      -- TODO: to gd
 
-    -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
-    keymap("n", "<leader>fd", telescope.diagnostics, { desc = "Diagnostics" })
+    keymap("n", "<leader>sd", telescope.diagnostics, { desc = "Diagnostics" })
 
     -- settings
     keymap("n", "<leader>nh", telescope.colorscheme, { desc = "Theme" }) -- set theme
@@ -217,3 +216,5 @@ end
 keymap("n", "<leader>/", smart_comment, { expr = true, desc = "Comment" })
 keymap("x", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", { desc = "Comment" })
 
+-- vim-maximizer
+-- keymap("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
