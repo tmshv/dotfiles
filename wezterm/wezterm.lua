@@ -32,7 +32,7 @@ return {
 		selection_bg = COLOR_ACCENT,
 
 		-- The color of the split lines between panes
-		split = "#444444",
+		split = "magenta",
 
 		tab_bar = {
 			-- The color of the strip that goes along the top of the window
