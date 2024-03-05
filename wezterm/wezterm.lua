@@ -10,22 +10,6 @@ local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
 
 local COLOR_ACCENT = "#ffdd66"
 
-local function scheme_for_appearance(appearance)
-	if appearance:find("Dark") then
-		return "Catppuccin Mocha"
-	else
-		-- color_scheme = "astromouse (terminal.sexy)",
-		-- color_scheme = "Sakura",
-		-- color_scheme = "rose-pine",
-		-- return "Royal"
-		-- return "Sakura"
-		-- retrun "SeaShells"
-		return "Sequoia Monochrome"
-		-- return "Sex Colors (terminal.sexy)"
-		-- return "Dark Violet (base16)"
-	end
-end
-
 return {
 	initial_rows = 40,
 	initial_cols = 150,
@@ -36,7 +20,7 @@ return {
 	tab_bar_at_bottom = true,
 	use_fancy_tab_bar = false,
 	tab_max_width = 26,
-	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+	color_scheme = "Catppuccin Mocha",
 	colors = {
 		-- foreground = "silver",
 		-- background = "black",
