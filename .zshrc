@@ -137,9 +137,18 @@ alias lt="ls --tree"
 # eval "$(zoxide init zsh --cmd cd)"
 eval "$(zoxide init zsh)"
 
-# setup transfer.sh to use it this way:
-# transfer hello.txt
-transfer(){ if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;}
+# Setup atuin.sh
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# Setup direnv
+eval "$(direnv hook zsh)"
+
+# Wasmer
+export WASMER_DIR="/Users/tmshv/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 # setup yazi cwd
 # q to put dir in yazi to cd
@@ -153,14 +162,24 @@ function ya() {
 	rm -f -- "$tmp"
 }
 
+# setup transfer.sh to use it this way:
+# transfer hello.txt
+transfer(){
+    if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;
+}
+
+
 # setup ntfy.sh/tmshv
 function notify {
     message=$1
     curl -d "$message" https://ntfy.sh/tmshv
 }
 
-# Setup atuin.sh
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
-eval "$(atuin init zsh --disable-up-arrow)"
+function gptran() {
+  local args="Translate this text to russian: $*"
+  heygpt "$args"
+}
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
