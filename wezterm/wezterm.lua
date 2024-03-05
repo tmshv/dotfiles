@@ -8,6 +8,8 @@ local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
 -- The filled in variant of the > symbol
 local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
 
+local COLOR_ACCENT = "#ffdd66"
+
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		return "Catppuccin Mocha"
@@ -40,7 +42,14 @@ return {
 			-- The color of the inactive tab bar edge/divider
 			inactive_tab_edge = "#575757",
 		},
-		cursor_bg = "#ff0",
+		-- cursor_bg = "#ff0",
+		cursor_bg = COLOR_ACCENT,
+        -- cursor_bg = "#ce00ce",
+
+		-- the foreground color of selected text
+		selection_fg = "black",
+		-- the background color of selected text
+		selection_bg = COLOR_ACCENT,
 	},
 	-- window_background_opacity = 0.90,
 	macos_window_background_blur = 0,
