@@ -6,7 +6,13 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Path
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/Users/tmshv/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$PATH:/Users/tmshv/go/bin"
+export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+
 export EDITOR='nvim'
 export DEFAULT_USER='tmshv'
 
