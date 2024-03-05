@@ -1,7 +1,7 @@
 -- skip if lspconfig is not available
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-    return
+	return
 end
 
 require("mason").setup()
@@ -47,15 +47,15 @@ lsp.configure("denols", {
 })
 
 lsp.configure("eslint", {
-    -- fix an error of eslint (Cannot read properties of undefined (reading 'loc') indent rule
-    -- while declaring new variable
-    -- more info here:
-    -- https://neovim.discourse.group/t/supressing-eslint-ls-errors/1687/5
-    handlers = {
-        ["window/showMessageRequest"] = function(_, result, params)
-            return result
-        end
-    }
+	-- fix an error of eslint (Cannot read properties of undefined (reading 'loc') indent rule
+	-- while declaring new variable
+	-- more info here:
+	-- https://neovim.discourse.group/t/supressing-eslint-ls-errors/1687/5
+	handlers = {
+		["window/showMessageRequest"] = function(_, result, params)
+			return result
+		end,
+	},
 })
 
 -- configure lua language server for neovim
