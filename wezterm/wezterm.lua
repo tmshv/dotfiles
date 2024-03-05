@@ -38,18 +38,59 @@ return {
 	tab_max_width = 26,
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 	colors = {
-		tab_bar = {
-			-- The color of the inactive tab bar edge/divider
-			inactive_tab_edge = "#575757",
-		},
-		-- cursor_bg = "#ff0",
+		-- foreground = "silver",
+		-- background = "black",
 		cursor_bg = COLOR_ACCENT,
-        -- cursor_bg = "#ce00ce",
 
 		-- the foreground color of selected text
 		selection_fg = "black",
 		-- the background color of selected text
 		selection_bg = COLOR_ACCENT,
+
+		-- The color of the split lines between panes
+		split = "#444444",
+
+		tab_bar = {
+			-- The color of the strip that goes along the top of the window
+			-- (does not apply when fancy tab bar is in use)
+			-- background = "#0b0022",
+
+			-- The active tab is the one that has focus in the window
+			active_tab = {
+				-- The color of the background area for the tab
+				bg_color = COLOR_ACCENT,
+				-- The color of the text for the tab
+				fg_color = "black",
+
+				-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
+				-- label shown for this tab.
+				-- The default is "Normal"
+				intensity = "Normal",
+
+				-- Specify whether you want "None", "Single" or "Double" underline for
+				-- label shown for this tab.
+				-- The default is "None"
+				-- underline = "None",
+
+				-- Specify whether you want the text to be italic (true) or not (false)
+				-- for this tab.  The default is false.
+				-- italic = false,
+
+				-- Specify whether you want the text to be rendered with strikethrough (true)
+				-- or not for this tab.  The default is false.
+				-- strikethrough = false,
+			},
+
+			-- Inactive tabs are the tabs that do not have focus
+			inactive_tab = {
+				-- bg_color = "#1b1032",
+				bg_color = "#1E1E2F",
+				fg_color = COLOR_ACCENT,
+			},
+
+			-- The color of the inactive tab bar edge/divider
+			inactive_tab_edge = "#575757",
+		},
 	},
 	-- window_background_opacity = 0.90,
 	macos_window_background_blur = 0,
@@ -90,7 +131,7 @@ return {
 		font_size = 12.0,
 		-- The overall background color of the tab bar when
 		-- the window is focused
-		active_titlebar_bg = "#fa00fa",
+		active_titlebar_bg = COLOR_ACCENT,
 		-- The overall background color of the tab bar when
 		-- the window is not focused
 		inactive_titlebar_bg = "#333333",
@@ -110,6 +151,23 @@ return {
 	--   timeout_milliseconds = 1000
 	-- },
 
+	-- keys = {
+	--     { key = "Enter",      mods = "ALT",       action = "DisableDefaultAssignment" },
+	--     {
+	--         key = "c",
+	--         mods = "SHIFT|ALT",
+	--         action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+	--     },
+	--     {
+	--         key = "x",
+	--         mods = "SHIFT|ALT",
+	--         action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
+	--     },
+	--     { key = "LeftArrow",  mods = "ALT|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+	--     { key = "RightArrow", mods = "ALT|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+	--     { key = "UpArrow",    mods = "ALT|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+	--     { key = "DownArrow",  mods = "ALT|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+	-- },
 	keys = {
 		{ key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
 		{ key = "Tab", mods = "SHIFT|CTRL", action = act.ActivateTabRelative(-1) },
