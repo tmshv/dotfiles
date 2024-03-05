@@ -25,6 +25,8 @@ local function scheme_for_appearance(appearance)
 end
 
 return {
+    initial_rows = 40,
+    initial_cols = 150,
     font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", stretch = 'Normal', style = 'Normal' }),
     font_size = 13,
     -- color_scheme = 'Batman',
