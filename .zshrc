@@ -129,8 +129,6 @@ alias la="ls -la"
 alias lt="ls --tree"
 
 # setup KITTY
-alias ssh="kitty +kitten ssh"
-alias icat="kitty +kitten icat --align=left"
 
 # setup FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
