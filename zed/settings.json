@@ -22,6 +22,14 @@
         "show_parameter_hints": true,
         "show_other_hints": true
     },
+    "language_overrides": {
+        "JSON": {
+            "format_on_save": "off",
+            "preferred_line_length": 120,
+            "remove_trailing_whitespace_on_save": false,
+            "soft_wrap": "preferred_line_length"
+        }
+    },
     "show_wrap_guides": true,
     // Whether to enable vim modes and key bindings
     "vim_mode": true,
