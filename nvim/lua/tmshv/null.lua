@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 null_ls.setup({
-    autostart = true,
+	autostart = true,
 	sources = {
 		-- An opinionated code formatter for Lua.
 		null_ls.builtins.formatting.stylua,
@@ -74,6 +74,9 @@ null_ls.setup({
 
 		-- Format your Justfile
 		null_ls.builtins.formatting.just,
+
+		-- yamlfmt is an extensible command line tool or library to format yaml files.
+		null_ls.builtins.formatting.yamlfmt,
 	},
 })
 
