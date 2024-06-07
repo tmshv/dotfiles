@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
+local package_path_str = "/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/tmshv/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -207,11 +207,6 @@ _G.packer_plugins = {
     path = "/Users/tmshv/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
-  ["nvim-ts-context-commentstring"] = {
-    loaded = true,
-    path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
-    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-  },
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
@@ -221,6 +216,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["ollama.nvim"] = {
+    commands = { "Ollama", "OllamaModel", "OllamaServe", "OllamaServeStop" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/tmshv/.local/share/nvim/site/pack/packer/opt/ollama.nvim",
+    url = "https://github.com/nomnivore/ollama.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -247,6 +250,11 @@ _G.packer_plugins = {
     path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["ts-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/ts-comments.nvim",
+    url = "https://github.com/folke/ts-comments.nvim"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/tmshv/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -264,6 +272,39 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
 time([[Sequenced loading]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'OllamaServeStop', function(cmdargs)
+          require('packer.load')({'ollama.nvim'}, { cmd = 'OllamaServeStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ollama.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('OllamaServeStop ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Ollama', function(cmdargs)
+          require('packer.load')({'ollama.nvim'}, { cmd = 'Ollama', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ollama.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Ollama ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'OllamaModel', function(cmdargs)
+          require('packer.load')({'ollama.nvim'}, { cmd = 'OllamaModel', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ollama.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('OllamaModel ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'OllamaServe', function(cmdargs)
+          require('packer.load')({'ollama.nvim'}, { cmd = 'OllamaServe', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ollama.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('OllamaServe ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

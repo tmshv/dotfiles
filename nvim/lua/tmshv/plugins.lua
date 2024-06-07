@@ -112,7 +112,13 @@ return function(use)
 		run = ":TSUpdate",
 	})
 	use("p00f/nvim-ts-rainbow")
-	use("JoosepAlviste/nvim-ts-context-commentstring") -- for smart JSX commenting
+	use({
+        "folke/ts-comments.nvim",
+		lazy = true,
+        -- opts = {},
+        -- event = "VeryLazy",
+        -- enabled = vim.fn.has("nvim-0.10.0") == 1,
+	})
 
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
@@ -120,7 +126,7 @@ return function(use)
 	-- TABS
 	use({
 		"akinsho/bufferline.nvim",
-		tag = "v3.*",
+		tag = "v4.*",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
 
