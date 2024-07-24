@@ -1,6 +1,7 @@
 # 'brew install'
 brew "htop"
 brew "ripgrep"
+brew "bat"
 brew "eza"
 brew "starship"
 brew "fzf"
