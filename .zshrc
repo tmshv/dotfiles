@@ -1,31 +1,11 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Path
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/Users/tmshv/.local/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="$PATH:/Users/tmshv/go/bin"
-export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
-export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-
-export EDITOR='nvim'
-export DEFAULT_USER='tmshv'
-
-
-export DO_NOT_TRACK=1
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="agnoster"
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,7 +60,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM="$HOME/Workspace/dotfiles/zsh"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -88,8 +68,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,84 +80,47 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export DO_NOT_TRACK=1
 
-alias nv="nvim"
+# Path
+export PATH="$PATH:/Users/tmshv/bin"
+export PATH="$PATH:/Users/tmshv/go/bin"
+# export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+# export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
-# setup LSD
-alias ls="lsd"
-alias l="ls -l"
-alias la="ls -la"
-alias lt="ls --tree"
+# NODE + mkcert pair
+# export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
-# setup KITTY
+# Setup AUTOSUGGESTIONS
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# setup FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Setup STARSHIP
+eval "$(starship init zsh)"
 
-# setup ZOXIDE
-# eval "$(zoxide init zsh --cmd cd)"
+# Setup FZF
+source <(fzf --zsh)
+
+# Setup ZOXIDE
 eval "$(zoxide init zsh)"
 
-# Setup atuin.sh
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
+# Setup MISE
+eval "$(mise activate zsh)"
+
+# Setup ATUIN.SH
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# Setup direnv
-eval "$(direnv hook zsh)"
+# Setup DIRENV
+# eval "$(direnv hook zsh)"
 
-# Wasmer
-export WASMER_DIR="/Users/tmshv/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
-# setup yazi cwd
-# q to put dir in yazi to cd
-# Q to just quit yazi and keep cwd unchanged
-function ya() {
-	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-# setup transfer.sh to use it this way:
-# transfer hello.txt
-transfer(){
-    if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;
-}
-
-
-# setup ntfy.sh/tmshv
-function notify {
-    message=$1
-    curl -d "$message" https://ntfy.sh/tmshv
-}
-
-function gptran() {
-  local args="Translate this text to russian: $*"
-  heygpt "$args"
-}
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+# Setup WASMER
+# export WASMER_DIR="/Users/tmshv/.wasmer"
+# [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
