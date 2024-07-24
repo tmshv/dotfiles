@@ -1,6 +1,7 @@
 # 'brew install'
 brew "htop"
 brew "ripgrep"
+brew "eza"
 brew "starship"
 brew "fzf"
 brew "zsh-autosuggestions"

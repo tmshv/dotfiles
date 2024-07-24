@@ -3,11 +3,10 @@
 
 alias zshconfig="zed ~/.zshrc"
 
-# setup LSD
-# alias ls="lsd"
-# alias l="ls -l"
-# alias la="ls -la"
-# alias lt="ls --tree"
+# setup EZA
+alias l="eza -l --icons auto"
+alias la="eza -la --icons auto"
+alias lt="eza --tree"
 
 # setup KITTY
 # alias ssh="kitty +kitten ssh"
