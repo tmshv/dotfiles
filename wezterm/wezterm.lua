@@ -130,9 +130,9 @@ return {
 	},
 	-- timeout_milliseconds defaults to 1000 and can be omitted
 	-- leader = {
-	--   key = '`',
-	--   mods = 'SUPER',
-	--   timeout_milliseconds = 1000
+	-- 	key = "a",
+	-- 	mods = "CTRL",
+	-- 	timeout_milliseconds = 1000,
 	-- },
 
 	keys = {
@@ -214,8 +214,6 @@ return {
 		{ key = "Z", mods = "SHIFT|CTRL", action = act.TogglePaneZoomState },
 		{ key = "[", mods = "SHIFT|SUPER", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "SHIFT|SUPER", action = act.ActivateTabRelative(1) },
-		{ key = "^", mods = "CTRL", action = act.ActivateTab(5) },
-		{ key = "^", mods = "SHIFT|CTRL", action = act.ActivateTab(5) },
 		{ key = "_", mods = "CTRL", action = act.DecreaseFontSize },
 		{ key = "_", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
 		{ key = "c", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
