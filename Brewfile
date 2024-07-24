@@ -1,8 +1,9 @@
-# 'brew install'
+# CLI
 brew "htop"
 brew "ripgrep"
 brew "bat"
 brew "eza"
+brew "zoxide"
 brew "starship"
 brew "fzf"
 brew "zsh-autosuggestions"
@@ -11,18 +12,22 @@ brew "fd"
 brew "tmux"
 brew "neovim"
 brew "watchexec"
-brew "zoxide"
 brew "hyperfine"
 # brew "helix"
 brew "gh"
 # brew "restic"
-brew "duckdb"
 brew "rclone"
-brew "jq"
 brew "gping"
 brew "gitui"
-brew "csvlens"
+brew "jq"
 brew "mise"
+brew "csvlens"
+brew "duckdb"
+
+# Languages
+brew "go"
+brew "ruff"
+brew "uv"
 
 # GIS
 brew "tippecanoe"
