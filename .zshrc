@@ -110,6 +110,14 @@ eval "$(starship init zsh)"
 
 # Setup FZF
 source <(fzf --zsh)
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 
 # Setup ZOXIDE
 eval "$(zoxide init zsh)"
