@@ -101,7 +101,9 @@ export PATH="$PATH:/Users/tmshv/go/bin"
 # export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # Setup AUTOSUGGESTIONS
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -s "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
 
 # Setup STARSHIP
 eval "$(starship init zsh)"
