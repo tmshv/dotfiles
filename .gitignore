@@ -1,0 +1,13 @@
+# Editors
+zed/.tmp*
+zed/conversations
+zed/embeddings
+zed/prompts
+
+micro/buffers
+
+# Secret variables
+zsh/secrets*.zsh
+
+# Other
+Brewfile.lock.json
