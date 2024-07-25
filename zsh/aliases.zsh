@@ -3,6 +3,10 @@
 
 alias zshconfig="zed ~/.zshrc"
 
+# Stolen from here: https://github.com/sobolevn/dotfiles/blob/master/shell/.aliases
+# I use this a lot:
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy | echo '=> Copied to pasteboard.'"
+
 # setup EZA
 alias l="eza -l --icons auto"
 alias la="eza -la --icons auto"
