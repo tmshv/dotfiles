@@ -40,3 +40,5 @@ brew "tippecanoe"
 brew "osmium-tool"
 
 cask "macfuse"
+cask "iina"
+
