@@ -23,6 +23,7 @@ brew "gping"
 brew "gitui"
 brew "jq"
 brew "mise"
+brew "curlie" # Curl should be installed (CLI Developer Tools on macOS)
 
 # Data Analisis
 brew "csvlens"
