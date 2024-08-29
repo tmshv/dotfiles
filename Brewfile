@@ -1,3 +1,8 @@
+# Core
+# Some dev tools required by other tools
+brew "pkg-config"
+brew "zsh-autosuggestions"
+
 # CLI
 brew "htop"
 brew "ripgrep"
@@ -6,7 +11,6 @@ brew "eza"
 brew "zoxide"
 brew "starship"
 brew "fzf"
-brew "zsh-autosuggestions"
 brew "atuin"
 brew "fd"
 brew "tmux"
@@ -21,6 +25,8 @@ brew "gping"
 brew "gitui"
 brew "jq"
 brew "mise"
+
+# Data Analisis
 brew "csvlens"
 brew "duckdb"
 
