@@ -41,6 +41,9 @@ brew "uv"
 brew "tippecanoe"
 brew "osmium-tool"
 
+# Hardware
+brew "arduino-cli"
+
 cask "macfuse"
 cask "iina"
 
