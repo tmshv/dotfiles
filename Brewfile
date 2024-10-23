@@ -39,6 +39,9 @@ brew "go"
 brew "ruff"
 brew "uv"
 
+# DB
+brew "libpq"
+
 # GIS
 brew "tippecanoe"
 brew "osmium-tool"
