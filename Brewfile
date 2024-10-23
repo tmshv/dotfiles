@@ -27,6 +27,8 @@ brew "gitui"
 brew "jq"
 brew "mise"
 brew "curlie" # Curl should be installed (CLI Developer Tools on macOS)
+brew "hexyl"
+brew "tokei"
 
 # Data Analisis
 brew "csvlens"
