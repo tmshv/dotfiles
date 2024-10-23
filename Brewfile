@@ -49,6 +49,9 @@ brew "osmium-tool"
 # Hardware
 brew "arduino-cli"
 
+# LSP
+brew "gopls"
+
 cask "macfuse"
 cask "iina"
 
