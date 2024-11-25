@@ -25,6 +25,8 @@ brew "rclone"
 brew "gping"
 brew "gitui"
 brew "jq"
+brew "yq"
+brew "htmlq"
 brew "mise"
 brew "curlie" # Curl should be installed (CLI Developer Tools on macOS)
 brew "hexyl"
