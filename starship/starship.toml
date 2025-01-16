@@ -1,3 +1,6 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $username\
 $hostname\
@@ -9,6 +12,13 @@ $cmd_duration\
 $line_break\
 $python\
 $character"""
+
+right_format = """
+$time
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
 
 [directory]
 style = "blue"
@@ -44,3 +54,8 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+[time]
+format = "[$time]($style)"
+time_format = "%T %Y%m%d"
+disabled = false
+
