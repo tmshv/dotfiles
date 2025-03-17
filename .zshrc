@@ -128,6 +128,9 @@ eval "$(mise activate zsh)"
 # Setup ATUIN.SH
 eval "$(atuin init zsh --disable-up-arrow)"
 
+# Setup OLLAMA
+OLLAMA_HOST=0.0.0.0:11434
+
 # Setup DIRENV
 # eval "$(direnv hook zsh)"
 
