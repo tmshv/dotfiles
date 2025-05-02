@@ -61,6 +61,8 @@ brew "gopls"
 brew "gofumpt"
 brew "goreleaser"
 
+ # Libraries
+brew "vips"
 
 cask "macfuse"
 cask "iina"
