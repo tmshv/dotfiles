@@ -42,7 +42,6 @@ brew "csvlens"
 brew "duckdb"
 
 # Languages
-brew "go"
 brew "ruff"
 brew "uv"
 
@@ -56,8 +55,12 @@ brew "osmium-tool"
 # Hardware
 brew "arduino-cli"
 
-# LSP
+# GO
+brew "go"
 brew "gopls"
+brew "gofumpt"
+brew "goreleaser"
+
 
 cask "macfuse"
 cask "iina"
