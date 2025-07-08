@@ -37,6 +37,7 @@ brew "restic"
 brew "age"
 brew "scooter"
 brew "croc"
+brew "hurl"
 
 # Data Analisis
 brew "csvlens"
