@@ -47,7 +47,6 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor.lsp]
-display-messages = true #	Display LSP progress messages below statusline1
+display-messages = true #	Display LSP progress messages below statusline
 auto-signature-help = true #	Enable automatic popup of signature help (parameter hints)	true
 display-signature-help-docs = true #
- 
