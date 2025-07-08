@@ -36,6 +36,7 @@ brew "aichat"
 brew "restic"
 brew "age"
 brew "scooter"
+brew "croc"
 
 # Data Analisis
 brew "csvlens"
