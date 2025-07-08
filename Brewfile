@@ -62,6 +62,7 @@ brew "go"
 brew "gopls"
 brew "gofumpt"
 brew "goreleaser"
+brew "golangci-lint"
 
 cask "macfuse"
 cask "iina"
