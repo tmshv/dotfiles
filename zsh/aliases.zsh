@@ -7,7 +7,7 @@ alias zshconfig="zed ~/.zshrc"
 # I use this a lot:
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy | echo '=> Copied to pasteboard.'"
 
-alias llm="ollama run gemma3:27b"
+alias llm="ollama run gemma3:27b-it-qat"
 
 # setup EZA
 alias l="eza -l --icons auto"
