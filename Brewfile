@@ -68,4 +68,5 @@ brew "golangci-lint"
 
 cask "macfuse"
 cask "iina"
+cask "wireshark-app"
 
