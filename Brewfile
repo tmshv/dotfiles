@@ -5,7 +5,9 @@ brew "zsh-autosuggestions"
 
 # CLI
 brew "htop"
+brew "btop"
 brew "telnet"
+brew "wget"
 brew "ripgrep"
 brew "bat"
 brew "eza"
