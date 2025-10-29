@@ -25,7 +25,6 @@ brew "gh"
 brew "glow"
 brew "rclone"
 brew "gping"
-brew "gitui"
 brew "jq"
 brew "yq"
 brew "jd"
@@ -40,6 +39,11 @@ brew "age"
 brew "scooter"
 brew "croc"
 brew "hurl"
+
+# GIT
+brew "git"
+brew "gitui"
+brew "git-filter-repo"
 
 # Data Analisis
 brew "csvlens"
