@@ -69,6 +69,8 @@ brew "gopls"
 brew "gofumpt"
 brew "goreleaser"
 brew "golangci-lint"
+brew "golangci-lint-langserver"
+brew "delve"
 
 cask "macfuse"
 cask "iina"
