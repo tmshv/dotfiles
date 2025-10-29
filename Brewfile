@@ -30,7 +30,6 @@ brew "yq"
 brew "jd"
 brew "htmlq"
 brew "mise"
-brew "curlie" # Curl should be installed (CLI Developer Tools on macOS)
 brew "hexyl"
 brew "tokei"
 brew "aichat"
