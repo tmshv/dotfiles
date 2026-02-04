@@ -14,6 +14,7 @@ brew "eza"
 brew "zoxide"
 brew "starship"
 brew "fzf"
+brew "sk"
 brew "atuin"
 brew "fd"
 brew "tmux"
@@ -43,6 +44,7 @@ brew "hurl"
 # GIT
 brew "git"
 brew "gitui"
+brew "lazygit"
 brew "git-filter-repo"
 
 # Data Analisis
@@ -52,6 +54,7 @@ brew "duckdb"
 # Languages
 brew "ruff"
 brew "uv"
+brew "ty"
 
 # DB
 brew "libpq"
