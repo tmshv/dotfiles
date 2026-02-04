@@ -72,6 +72,7 @@ brew "golangci-lint"
 brew "golangci-lint-langserver"
 brew "delve"
 
+cask "claude-code"
 cask "macfuse"
 cask "iina"
 cask "marta"
