@@ -41,6 +41,10 @@ brew "scooter"
 brew "croc"
 brew "hurl"
 
+# AI
+cask "claude-code"
+brew "agent-browser", args: ["ignore-dependencies"]
+
 # GIT
 brew "git"
 brew "gitui"
@@ -75,7 +79,6 @@ brew "golangci-lint"
 brew "golangci-lint-langserver"
 brew "delve"
 
-cask "claude-code"
 cask "macfuse"
 cask "iina"
 cask "marta"
