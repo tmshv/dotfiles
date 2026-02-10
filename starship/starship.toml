@@ -11,6 +11,7 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+$golang\
 $character"""
 
 right_format = """
@@ -54,6 +55,12 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[golang]
+format = "[$symbol $version]($style) "
+symbol = "[GO]($style)"
+style = "bright-black"
+
 [time]
 format = "[$time]($style)"
 time_format = "%T %Y%m%d"
