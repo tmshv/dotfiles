@@ -44,6 +44,7 @@ brew "hexyl"
 brew "bat"
 
 # AI
+brew "whisper-cpp"
 cask "claude-code"
 brew "agent-browser", args: ["ignore-dependencies"]
 
