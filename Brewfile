@@ -88,4 +88,5 @@ cask "macfuse"
 cask "iina"
 cask "marta"
 cask "wireshark-app"
+cask "ungoogled-chromium"
 
