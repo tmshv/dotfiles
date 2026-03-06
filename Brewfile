@@ -47,6 +47,8 @@ brew "bat"
 # AI
 brew "whisper-cpp"
 cask "claude-code"
+cask "codex"
+brew "charmbracelet/tap/crush"
 
 # GIT
 brew "git"
