@@ -36,6 +36,7 @@ brew "age"
 brew "scooter"
 brew "croc"
 brew "hurl"
+brew "pandoc"
 
 # EDITOR
 brew "helix"
