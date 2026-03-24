@@ -1,0 +1,80 @@
+# DOWN BELOW IS AN UMPUTUN CONFIG
+
+# font-size = 15
+link-url = false
+shell-integration = detect
+term = xterm-256color
+
+window-new-tab-position = end
+window-decoration = true
+
+unfocused-split-opacity = 0.6
+focus-follows-mouse = false
+macos-titlebar-style = native
+clipboard-paste-protection=true
+#shell-integration-features=no-cursor
+
+cursor-opacity = 0.8
+cursor-style = block
+cursor-style-blink = true
+cursor-color = #d6d6d6
+
+minimum-contrast = 1.5
+window-vsync = true
+macos-option-as-alt = false
+desktop-notifications = true
+mouse-scroll-multiplier = 1.5
+mouse-hide-while-typing = true
+bold-is-bright = true
+mouse-shift-capture = never
+
+palette = 4=#2774C7
+palette = 8=#6A6A6A
+
+keybind = super+f=write_screen_file:open
+keybind = ctrl+ц=text:\x03
+
+
+# HERE IS MY OVERRIDES
+
+copy-on-select = true
+
+shell-integration = zsh
+
+shell-integration-features = no-cursor
+cursor-style = block
+# cursor-style-blink = false
+cursor-click-to-move = true
+# cursor-opacity = 0.8
+cursor-style-blink = true
+cursor-color = #ff00ff
+
+selection-background = #ffff00
+selection-foreground = #dfdfff
+
+# background = 181623
+# foreground = ffffff
+# theme = Borland
+theme = Rose Pine
+
+# background-opacity = 0.7
+# background-blur-radius = 10
+
+# keybind = trigger=action
+keybind = ctrl+g>v=new_split:up
+keybind = ctrl+g>h=new_split:right
+
+# window-decoration = false
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+macos-titlebar-style = tabs
+
+macos-option-as-alt = true
+
+# macos-icon-frame = beige
+
+window-save-state = always
+
+focus-follows-mouse = true
+
