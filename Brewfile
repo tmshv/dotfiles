@@ -37,6 +37,8 @@ brew "scooter"
 brew "croc"
 brew "hurl"
 brew "pandoc"
+brew "mihomo"
+brew "aria2"
 
 # EDITOR
 brew "helix"
