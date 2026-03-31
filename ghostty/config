@@ -63,6 +63,10 @@ theme = Rose Pine
 # keybind = trigger=action
 keybind = ctrl+g>v=new_split:up
 keybind = ctrl+g>h=new_split:right
+keybind = ctrl+g>left=goto_split:left
+keybind = ctrl+g>right=goto_split:right
+keybind = ctrl+g>up=goto_split:up
+keybind = ctrl+g>down=goto_split:down
 
 # window-decoration = false
 window-padding-x = 4
