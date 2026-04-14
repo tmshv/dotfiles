@@ -59,6 +59,7 @@ brew "git"
 brew "gitui"
 brew "lazygit"
 brew "git-filter-repo"
+brew "prek"
 
 # Data Analisis
 brew "csvlens"
