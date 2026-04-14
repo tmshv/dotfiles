@@ -94,6 +94,7 @@ export DO_NOT_TRACK=1
 # Path
 export PATH="$PATH:/Users/tmshv/bin"
 export PATH="$PATH:/Users/tmshv/go/bin"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 # export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
