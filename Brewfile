@@ -89,6 +89,12 @@ brew "golangci-lint"
 brew "golangci-lint-langserver"
 brew "delve"
 
+# JS / TS
+brew "biome"
+
+# Other Languages
+brew "shfmt"
+
 cask "macfuse"
 cask "ghostty"
 cask "iina"
