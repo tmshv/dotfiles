@@ -65,7 +65,7 @@ brew "prek"
 brew "csvlens"
 brew "duckdb"
 
-# Languages
+# Python
 brew "ruff"
 brew "uv"
 brew "ty"
