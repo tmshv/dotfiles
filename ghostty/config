@@ -82,3 +82,5 @@ window-save-state = always
 
 focus-follows-mouse = true
 
+custom-shader = ./bloom.glsl
+custom-shader = ./crt.glsl
