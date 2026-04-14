@@ -39,6 +39,7 @@ brew "hurl"
 brew "pandoc"
 brew "mihomo"
 brew "aria2"
+brew "umputun/apps/spot"
 
 # EDITOR
 brew "helix"
@@ -51,6 +52,7 @@ brew "whisper-cpp"
 cask "claude-code"
 cask "codex"
 brew "charmbracelet/tap/crush"
+brew "umputun/apps/ralphex"
 
 # GIT
 brew "git"
@@ -87,6 +89,7 @@ brew "golangci-lint-langserver"
 brew "delve"
 
 cask "macfuse"
+cask "ghostty"
 cask "iina"
 cask "marta"
 cask "wireshark-app"
