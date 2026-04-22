@@ -72,6 +72,7 @@ brew "ty"
 
 # DB
 brew "libpq"
+brew "goose"
 
 # GIS
 brew "tippecanoe"
