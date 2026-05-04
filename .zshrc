@@ -101,6 +101,11 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # NODE + mkcert pair
 # export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
+
+# Setup Homebrew
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ANALYTICS=1
+
 # Setup AUTOSUGGESTIONS
 if [ -s "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
