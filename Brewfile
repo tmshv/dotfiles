@@ -4,6 +4,7 @@ brew "pkg-config"
 brew "zsh-autosuggestions"
 
 # CLI
+brew "coreutils"
 brew "htop"
 brew "btop"
 brew "telnet"
