@@ -101,6 +101,11 @@ brew "biome"
 brew "shfmt"
 brew "actionlint"
 
+# Libraries
+brew "geos"
+brew "opus"
+brew "cairo"
+
 cask "macfuse"
 cask "ghostty"
 cask "iina"
