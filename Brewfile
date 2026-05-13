@@ -52,7 +52,7 @@ brew "bat"
 
 # AI
 brew "whisper-cpp"
-cask "claude-code"
+cask "claude-code@latest"
 cask "codex"
 brew "charmbracelet/tap/crush"
 brew "umputun/apps/ralphex"
