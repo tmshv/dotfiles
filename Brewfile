@@ -55,6 +55,7 @@ brew "whisper-cpp"
 cask "claude-code@latest"
 cask "codex"
 brew "charmbracelet/tap/crush"
+brew "umputun/apps/revdiff"
 brew "umputun/apps/ralphex"
 
 # GIT
