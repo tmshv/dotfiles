@@ -99,6 +99,7 @@ brew "biome"
 
 # Other Languages
 brew "shfmt"
+brew "actionlint"
 
 cask "macfuse"
 cask "ghostty"
