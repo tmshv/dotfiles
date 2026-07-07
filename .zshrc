@@ -103,6 +103,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 
 # Setup Homebrew
+# Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with `$HOMEBREW_NO_AUTO_UPDATE=1`.
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
 
