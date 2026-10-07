@@ -87,6 +87,7 @@ brew "libpq"
 brew "goose"
 
 # GIS
+brew "gdal"
 brew "tippecanoe"
 brew "osmium-tool"
 
